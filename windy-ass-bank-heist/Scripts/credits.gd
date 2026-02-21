@@ -10,7 +10,8 @@ extends Control
 # func _process(delta):
 #	pass
 
+signal menu(index: int)
 
 func _on_return_button_pressed():
-	print("Return button pressed! Moving to main menu.")
-	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+	print("Return -> Menu ->")
+	emit_signal("menu")
