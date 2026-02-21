@@ -4,7 +4,7 @@ class_name Wire
 @export var spark : PackedScene
 @export var SparkPath : Line2D
 
-@export var move_speed : float = 200 #the constant velocity of the node
+@export var move_speed : float = 150 #the constant velocity of the node
 
 var cur_spark = null
 
