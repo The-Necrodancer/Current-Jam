@@ -53,10 +53,7 @@ func load_scene(index:int = 0, packedScene:PackedScene = null):
 		cur_level.gameManager = self
 	
 	self.add_child(cur_level)
-	
-	var g = get_tree().get_nodes_in_group("Gem")
-	for Gem in g:
-		Gem.connect("next_level", load_next_scene)
+
 
 
 #defaults to title screen if index is out of bounds

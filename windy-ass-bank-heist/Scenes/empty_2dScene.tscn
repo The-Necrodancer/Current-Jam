@@ -5,10 +5,12 @@
 [ext_resource type="PackedScene" uid="uid://dectjccxyaw1r" path="res://Scenes/player.tscn" id="2_w7fk8"]
 [ext_resource type="PackedScene" uid="uid://bhc828t5ibioa" path="res://Scenes/WireController.tscn" id="3_4574e"]
 [ext_resource type="PackedScene" uid="uid://cfne1c7isnf7l" path="res://Scenes/door.tscn" id="4_6yj1h"]
-[ext_resource type="PackedScene" uid="uid://dm0tibvgy3wkq" path="res://Scenes/gem.tscn" id="5_c3w37"]
+[ext_resource type="PackedScene" uid="uid://3aebq2xa05pm" path="res://Scenes/gem.tscn" id="5_c3w37"]
 
-[node name="Empty2dScene" type="Node2D" unique_id=875911448]
+[node name="Empty2dScene" type="Node2D" unique_id=875911448 node_paths=PackedStringArray("end_door", "end_gem")]
 script = ExtResource("1_c3w37")
+end_door = NodePath("Door")
+end_gem = NodePath("Gem")
 metadata/_custom_type_script = "uid://6t8efmx5m2rt"
 
 [node name="BasicTilemap" parent="." unique_id=137257255 instance=ExtResource("1_rnf03")]
