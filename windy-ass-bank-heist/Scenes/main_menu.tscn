@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://ddb8w0tkm1aqo"]
+
+[ext_resource type="Script" uid="uid://20nwkqa2ucd7" path="res://Scenes/main_menu.gd" id="1_1ehe0"]
+[ext_resource type="FontFile" uid="uid://bdmkc1uih2gc3" path="res://Assets/shovel-knight-extended.ttf" id="1_48xlc"]
+[ext_resource type="Texture2D" uid="uid://bhjntx87mwqqs" path="res://Assets/text_box.png" id="2_1ehe0"]
+
+[node name="Control" type="Control" unique_id=444931364]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1ehe0")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1038401975]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.47058824, 0.6313726, 0.8039216, 1)
+
+[node name="Credits_Button" type="Button" parent="." unique_id=1443751560]
+layout_mode = 0
+offset_left = 422.0
+offset_top = 413.0
+offset_right = 719.0
+offset_bottom = 497.0
+theme_override_fonts/font = ExtResource("1_48xlc")
+text = "Credits"
+icon = ExtResource("2_1ehe0")
+flat = true
+autowrap_trim_flags = 0
+icon_alignment = 1
+
+[node name="Play_Button" type="Button" parent="." unique_id=1314149814]
+layout_mode = 0
+offset_left = 422.0
+offset_top = 308.0
+offset_right = 719.0
+offset_bottom = 392.0
+theme_override_fonts/font = ExtResource("1_48xlc")
+text = "Play"
+icon = ExtResource("2_1ehe0")
+flat = true
+autowrap_trim_flags = 0
+icon_alignment = 1
+
+[node name="Quit_Button" type="Button" parent="." unique_id=113108807]
+layout_mode = 0
+offset_left = 422.0
+offset_top = 514.0
+offset_right = 719.0
+offset_bottom = 598.0
+theme_override_fonts/font = ExtResource("1_48xlc")
+text = "Quit"
+icon = ExtResource("2_1ehe0")
+flat = true
+autowrap_trim_flags = 0
+icon_alignment = 1
+
+[node name="Title" type="RichTextLabel" parent="." unique_id=1663767067]
+layout_mode = 0
+offset_left = 388.0
+offset_top = 83.0
+offset_right = 760.0
+offset_bottom = 185.0
+theme_override_fonts/normal_font = ExtResource("1_48xlc")
+theme_override_font_sizes/normal_font_size = 32
+text = "[Insert Title Here]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Credits_Button" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="Play_Button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Quit_Button" to="." method="_on_quit_button_pressed"]

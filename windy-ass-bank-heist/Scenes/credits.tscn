@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://4fy4jm20u5ij"]
+
+[ext_resource type="Script" uid="uid://dgcv5phe8es8p" path="res://Scenes/credits.gd" id="1_1bamb"]
+[ext_resource type="Texture2D" uid="uid://bhjntx87mwqqs" path="res://Assets/text_box.png" id="1_gryuy"]
+[ext_resource type="FontFile" uid="uid://bdmkc1uih2gc3" path="res://Assets/shovel-knight-extended.ttf" id="2_1bamb"]
+[ext_resource type="Texture2D" uid="uid://1ll4k4h0yq82" path="res://Assets/Custom_Godot_Icon_Purple.svg" id="2_ccovl"]
+
+[node name="Control" type="Control" unique_id=1367188092]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1bamb")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1599170437]
+texture_filter = 1
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_gryuy")
+
+[node name="CreditsTitle" type="RichTextLabel" parent="." unique_id=1762547136]
+layout_mode = 0
+offset_left = 388.0
+offset_top = 83.0
+offset_right = 760.0
+offset_bottom = 185.0
+theme_override_fonts/normal_font = ExtResource("2_1bamb")
+theme_override_font_sizes/normal_font_size = 32
+text = "Credits"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Credits" type="RichTextLabel" parent="." unique_id=14633752]
+layout_mode = 0
+offset_left = 87.0
+offset_top = 202.0
+offset_right = 1087.0
+offset_bottom = 486.0
+theme_override_fonts/normal_font = ExtResource("2_1bamb")
+theme_override_font_sizes/normal_font_size = 20
+text = "Filip [Last Name] (tealsquid) - Art & Programming
+
+
+Konstantinos Mokos - Level Design
+
+
+Owen Krupa (The_Necrodancer) - Programming"
+horizontal_alignment = 1
+
+[node name="CustomGodotIconPurple" type="Sprite2D" parent="Credits" unique_id=992849696]
+position = Vector2(38.000015, 135)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_ccovl")
+
+[node name="Return_Button" type="Button" parent="." unique_id=1114775636]
+layout_mode = 0
+offset_left = 439.0
+offset_top = 525.0
+offset_right = 736.0
+offset_bottom = 609.0
+theme_override_fonts/font = ExtResource("2_1bamb")
+text = "Return"
+icon = ExtResource("1_gryuy")
+flat = true
+autowrap_trim_flags = 0
+icon_alignment = 1
+
+[connection signal="pressed" from="Return_Button" to="." method="_on_return_button_pressed"]
