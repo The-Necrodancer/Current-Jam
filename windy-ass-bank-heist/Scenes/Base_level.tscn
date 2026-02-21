@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://p4apwkbkpfgp"]
+
+[ext_resource type="Script" uid="uid://6t8efmx5m2rt" path="res://Scripts/level.gd" id="1_3hu7v"]
+[ext_resource type="PackedScene" uid="uid://3aebq2xa05pm" path="res://Scenes/gem.tscn" id="2_hilbu"]
+[ext_resource type="PackedScene" uid="uid://cfne1c7isnf7l" path="res://Scenes/door.tscn" id="3_mllul"]
+[ext_resource type="PackedScene" uid="uid://b4hq18ry2n160" path="res://Tilemap Stuff/BasicTilemap.tscn" id="4_sqhld"]
+
+[node name="Level" type="Node2D" unique_id=1257747170 node_paths=PackedStringArray("end_door", "end_gem")]
+script = ExtResource("1_3hu7v")
+end_door = NodePath("Door")
+end_gem = NodePath("Gem")
+metadata/_custom_type_script = "uid://6t8efmx5m2rt"
+
+[node name="Gem" parent="." unique_id=1617286755 instance=ExtResource("2_hilbu")]
+
+[node name="Door" parent="." unique_id=890636085 instance=ExtResource("3_mllul")]
+
+[node name="BasicTilemap" parent="." unique_id=922358941 instance=ExtResource("4_sqhld")]
