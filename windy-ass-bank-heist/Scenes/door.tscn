@@ -83,8 +83,9 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fahql"]
 size = Vector2(16, 16)
 
-[node name="Door" type="StaticBody2D" unique_id=890636085 groups=["Door"]]
+[node name="Door" type="StaticBody2D" unique_id=890636085 node_paths=PackedStringArray("area") groups=["Door"]]
 script = ExtResource("1_p0e35")
+area = NodePath("Area2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1650425241]
 visible = false
@@ -105,7 +106,5 @@ collision_layer = 4
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1233464187]
-position = Vector2(40, -136)
+position = Vector2(24, -168)
 shape = SubResource("RectangleShape2D_fahql")
-
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
