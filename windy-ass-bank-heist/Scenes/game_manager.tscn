@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://mpcwqe2awiyw"]
 
 [ext_resource type="Script" uid="uid://da4u1sdv013y7" path="res://Scripts/game_manager.gd" id="1_e5fcp"]
+[ext_resource type="PackedScene" uid="uid://ddb8w0tkm1aqo" path="res://Scenes/main_menu.tscn" id="2_mmt5l"]
 [ext_resource type="PackedScene" uid="uid://bo67deoq5ok2c" path="res://Scenes/empty_2dScene.tscn" id="2_sq00h"]
 
 [node name="GameManager" type="Node2D" unique_id=1496258959]
 script = ExtResource("1_e5fcp")
-MainMenuScene = ExtResource("2_sq00h")
+MainMenuScene = ExtResource("2_mmt5l")
+levels = Array[PackedScene]([ExtResource("2_sq00h")])

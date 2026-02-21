@@ -16,7 +16,7 @@ script = ExtResource("1_1ehe0")
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1038401975]
 layout_mode = 0
 offset_right = 1152.0
-offset_bottom = 648.0
+offset_bottom = 672.0
 color = Color(0.47058824, 0.6313726, 0.8039216, 1)
 
 [node name="Credits_Button" type="Button" parent="." unique_id=1443751560]

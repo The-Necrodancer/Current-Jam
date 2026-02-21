@@ -18,7 +18,10 @@ func remove_current_scene():
 func load_main_menu():
 	remove_current_scene()
 	
+	
+	
 	var node = MainMenuScene.instantiate()
+	node.connect("start", load_scene)
 	self.add_child(node)
 	cur_level_index = -1;
 
@@ -33,6 +36,13 @@ func load_scene(index:int = 0, packedScene:PackedScene = null):
 		cur_level = await packedScene.instantiate()
 	
 	self.add_child(cur_level)
+	
+	#Connects Doors to level manager
+	var d = get_tree().get_nodes_in_group("Door")
+	for Door in d:
+		Door.connect("level_reset", reload_current_scene)
+	
+
 
 #defaults to title screen if index is out of bounds
 func load_next_scene():

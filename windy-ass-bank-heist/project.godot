@@ -17,11 +17,16 @@ config/icon="res://Assets/icon.svg"
 
 [display]
 
+window/size/viewport_height=672
 window/stretch/mode="canvas_items"
 
 [dotnet]
 
 project/assembly_name="Windy Ass Bank Heist"
+
+[global_group]
+
+Door=""
 
 [input]
 
