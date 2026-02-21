@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bhjntx87mwqqs" path="res://Assets/text_box.png" id="1_gryuy"]
 [ext_resource type="FontFile" uid="uid://bdmkc1uih2gc3" path="res://Assets/shovel-knight-extended.ttf" id="2_1bamb"]
 [ext_resource type="Texture2D" uid="uid://1ll4k4h0yq82" path="res://Assets/Custom_Godot_Icon_Purple.svg" id="2_ccovl"]
+[ext_resource type="Texture2D" uid="uid://djh4ajsmwvad2" path="res://Assets/fish.png" id="5_xelri"]
 
 [node name="Control2" type="Control" unique_id=1367188092]
 layout_mode = 3
@@ -44,7 +45,7 @@ theme_override_font_sizes/normal_font_size = 20
 text = "Filip [Last Name] (tealsquid) - Art & Programming
 
 
-Konstantinos Mokos - Level Design
+BIG KONst - Level Design & PRogramming
 
 
 Owen Krupa (The_Necrodancer) - Programming"
@@ -54,6 +55,13 @@ horizontal_alignment = 1
 position = Vector2(38.000015, 135)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_ccovl")
+
+[node name="Fish" type="Sprite2D" parent="Credits" unique_id=1476234714]
+position = Vector2(75, 71)
+scale = Vector2(2, 2)
+texture = ExtResource("5_xelri")
+region_enabled = true
+region_rect = Rect2(0, 0, 66.60771, 64)
 
 [node name="Return_Button" type="Button" parent="." unique_id=1114775636]
 layout_mode = 0

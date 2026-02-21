@@ -19,21 +19,21 @@ script = ExtResource("1_cvnsp")
 GroundCheck = NodePath("GroundCheck")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1486239105]
-position = Vector2(0, -26)
+position = Vector2(25.599998, -25.400002)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_6t5aa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=461690700]
-position = Vector2(0, -26)
+position = Vector2(25.6, -25.400002)
 shape = SubResource("RectangleShape2D_4flbx")
 
 [node name="GroundCheck" type="ShapeCast2D" parent="." unique_id=1446163651]
-position = Vector2(-0.39999962, -26.4)
+position = Vector2(25.2, -25.800001)
 shape = SubResource("RectangleShape2D_cvnsp")
 target_position = Vector2(0, 30)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1790208401]
-position = Vector2(-0.39999962, -26.4)
+position = Vector2(25.2, -25.800001)
 collision_layer = 8
 collision_mask = 8
 
