@@ -24,3 +24,4 @@ shape = SubResource("RectangleShape2D_4flbx")
 
 [node name="GroundCheck" type="ShapeCast2D" parent="." unique_id=1446163651]
 shape = SubResource("RectangleShape2D_cvnsp")
+target_position = Vector2(0, 30)
