@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Windy Ass Bank Heist"
-run/main_scene="uid://ddb8w0tkm1aqo"
+run/main_scene="uid://mpcwqe2awiyw"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://Assets/icon.svg"
 
