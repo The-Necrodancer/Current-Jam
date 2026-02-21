@@ -6,3 +6,4 @@
 [node name="GameManager" type="Node2D" unique_id=1496258959]
 script = ExtResource("1_e5fcp")
 MainMenuScene = ExtResource("2_sq00h")
+metadata/_edit_group_ = true
