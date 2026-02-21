@@ -18,8 +18,6 @@ func remove_current_scene():
 func load_main_menu():
 	remove_current_scene()
 	
-	
-	
 	var node = MainMenuScene.instantiate()
 	node.connect("start", load_scene)
 	self.add_child(node)
