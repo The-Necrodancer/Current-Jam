@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b4hq18ry2n160" path="res://Tilemap Stuff/BasicTilemap.tscn" id="1_rnf03"]
 [ext_resource type="PackedScene" uid="uid://dectjccxyaw1r" path="res://Scenes/player.tscn" id="2_w7fk8"]
+[ext_resource type="PackedScene" uid="uid://dkdnofof88xja" path="res://Scenes/wire.tscn" id="3_4574e"]
 
 [node name="Empty2dScene" type="Node2D" unique_id=1277267396]
 
@@ -10,3 +11,9 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAA
 
 [node name="Player" parent="." unique_id=1947678060 instance=ExtResource("2_w7fk8")]
 position = Vector2(117, 225)
+
+[node name="Wire" parent="." unique_id=9856284 node_paths=PackedStringArray("SparkPath") instance=ExtResource("3_4574e")]
+SparkPath = NodePath("Line2D")
+
+[node name="Line2D" type="Line2D" parent="Wire" unique_id=469706859]
+points = PackedVector2Array(48, 48, 144, 48, 144, 192, 720, 192)
