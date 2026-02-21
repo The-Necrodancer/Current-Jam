@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://c80f0jpperiy7"]
 
-[ext_resource type="Texture2D" uid="uid://bl1b7576mjpom" path="res://icon.svg" id="1_ygcql"]
+[ext_resource type="Texture2D" uid="uid://bl1b7576mjpom" path="res://Assets/icon.svg" id="1_ygcql"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ygcql"]
 size = Vector2(10, 10)
 
 [node name="Spark" type="Area2D" unique_id=1090099148]
+collision_layer = 4
+collision_mask = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1390575545]
 scale = Vector2(0.2, 0.2)
