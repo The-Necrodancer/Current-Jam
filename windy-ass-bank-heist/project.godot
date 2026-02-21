@@ -27,6 +27,7 @@ project/assembly_name="Windy Ass Bank Heist"
 [global_group]
 
 Door=""
+Gem=""
 
 [input]
 

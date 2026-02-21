@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://4fy4jm20u5ij"]
 
-[ext_resource type="Script" uid="uid://dgcv5phe8es8p" path="res://Scenes/credits.gd" id="1_1bamb"]
+[ext_resource type="Script" uid="uid://dgcv5phe8es8p" path="res://Scripts/credits.gd" id="1_1bamb"]
 [ext_resource type="Texture2D" uid="uid://bhjntx87mwqqs" path="res://Assets/text_box.png" id="1_gryuy"]
 [ext_resource type="FontFile" uid="uid://bdmkc1uih2gc3" path="res://Assets/shovel-knight-extended.ttf" id="2_1bamb"]
 [ext_resource type="Texture2D" uid="uid://1ll4k4h0yq82" path="res://Assets/Custom_Godot_Icon_Purple.svg" id="2_ccovl"]
 
-[node name="Control" type="Control" unique_id=1367188092]
+[node name="Control2" type="Control" unique_id=1367188092]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -18,7 +18,7 @@ script = ExtResource("1_1bamb")
 texture_filter = 1
 layout_mode = 0
 offset_right = 1152.0
-offset_bottom = 648.0
+offset_bottom = 672.0
 texture = ExtResource("1_gryuy")
 
 [node name="CreditsTitle" type="RichTextLabel" parent="." unique_id=1762547136]
