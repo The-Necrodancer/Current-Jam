@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://c4512pji0h4i4"]
+
+[ext_resource type="Texture2D" uid="uid://tx48ei6ei4xm" path="res://Sprites/wires_map.png" id="1_rqcbl"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n6g3b"]
+texture = ExtResource("1_rqcbl")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_3m51y"]
+sources/0 = SubResource("TileSetAtlasSource_n6g3b")
+
+[node name="WireTilemap" type="TileMapLayer" unique_id=1923152713]
+z_index = 1
+scale = Vector2(3, 3)
+tile_set = SubResource("TileSet_3m51y")

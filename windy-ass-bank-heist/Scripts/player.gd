@@ -24,6 +24,8 @@ var timer_jump_buf = 0
 var is_hovering = false
 var hover_decel = 0.8
 
+signal on_death
+
 func _init() -> void:
 	pass
 
@@ -80,3 +82,11 @@ func jump():
 		velocity.y = -jump_vel #y inverted in godot
 	else:
 		timer_jump_buf = 0
+
+func kill():
+	on_death.emit()
+
+
+func _on_hurtbox_body_entered(body: Node2D) -> void:
+	print("is kill :(")
+	on_death.emit()

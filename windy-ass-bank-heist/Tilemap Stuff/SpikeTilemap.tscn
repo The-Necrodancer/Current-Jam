@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://nshtepqpar2j"]
+
+[ext_resource type="Texture2D" uid="uid://chg1nepkyhei4" path="res://Sprites/spike_map.png" id="1_csljq"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_68nse"]
+texture = ExtResource("1_csljq")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, -8, 1.6539822, 8, 1.6539822, 8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(2.1762905, 8, 2.0021877, -8, 8, -8, 8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.6986008, -8, -2.1762905, 8, -8, 8, -8, -8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -1.6539803, 8, -1.6539803, 8, -8, -8, -8)
+
+[sub_resource type="TileSet" id="TileSet_hurnw"]
+physics_layer_0/collision_layer = 8
+physics_layer_0/collision_mask = 0
+sources/0 = SubResource("TileSetAtlasSource_68nse")
+
+[node name="SpikeTilemap" type="TileMapLayer" unique_id=1876759003]
+scale = Vector2(3, 3)
+tile_set = SubResource("TileSet_hurnw")
