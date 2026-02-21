@@ -4,6 +4,7 @@ class_name GameManager
 # lets make this the parent node for the entire game
 
 @export var MainMenuScene : PackedScene # just set this to the main packedScene. loads on startup
+@export var CreditsScene: PackedScene # The credits Scene
 @export var levels : Array[PackedScene] 
 
 var cur_level_index : int = 0 # this keeps track of the current level in the list
@@ -20,8 +21,23 @@ func load_main_menu():
 	
 	var node = MainMenuScene.instantiate()
 	node.connect("start", load_scene)
+	node.connect("credits", load_credits_scene)
 	self.add_child(node)
 	cur_level_index = -1;
+
+func load_credits_scene():
+	print("Loading credits scene...")
+	remove_current_scene()
+	
+	var node = CreditsScene.instantiate()
+	node.connect("menu", load_main_menu)
+	self.add_child(node)
+	cur_level_index = -1;
+	
+
+func quit_game():
+	print("Quitting Game...")
+	get_tree().quit()
 
 func load_scene(index:int = 0, packedScene:PackedScene = null):
 	remove_current_scene()

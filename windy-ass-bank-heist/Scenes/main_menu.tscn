@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ddb8w0tkm1aqo"]
 
-[ext_resource type="Script" path="res://Scenes/main_menu.gd" id="1_1ehe0"]
+[ext_resource type="Script" uid="uid://d0idb02c64k04" path="res://Scripts/main_menu.gd" id="1_1ehe0"]
 [ext_resource type="FontFile" uid="uid://bdmkc1uih2gc3" path="res://Assets/shovel-knight-extended.ttf" id="1_48xlc"]
 [ext_resource type="Texture2D" uid="uid://bhjntx87mwqqs" path="res://Assets/text_box.png" id="2_1ehe0"]
 
