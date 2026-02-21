@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://cfne1c7isnf7l" path="res://Scenes/door.tscn" id="3_mllul"]
 [ext_resource type="PackedScene" uid="uid://b4hq18ry2n160" path="res://Tilemap Stuff/BasicTilemap.tscn" id="4_sqhld"]
 [ext_resource type="PackedScene" uid="uid://dectjccxyaw1r" path="res://Scenes/player.tscn" id="5_hilbu"]
+[ext_resource type="PackedScene" uid="uid://nshtepqpar2j" path="res://Tilemap Stuff/SpikeTilemap.tscn" id="6_sqhld"]
+[ext_resource type="PackedScene" uid="uid://c4512pji0h4i4" path="res://Tilemap Stuff/WireTilemap.tscn" id="7_jyscc"]
 
 [node name="Level" type="Node2D" unique_id=1257747170 node_paths=PackedStringArray("player", "end_door", "end_gem")]
 script = ExtResource("1_3hu7v")
@@ -20,3 +22,7 @@ metadata/_custom_type_script = "uid://6t8efmx5m2rt"
 [node name="BasicTilemap" parent="." unique_id=922358941 instance=ExtResource("4_sqhld")]
 
 [node name="Player" parent="." unique_id=1947678060 instance=ExtResource("5_hilbu")]
+
+[node name="SpikeTilemap" parent="." unique_id=1876759003 instance=ExtResource("6_sqhld")]
+
+[node name="WireTilemap" parent="." unique_id=1923152713 instance=ExtResource("7_jyscc")]

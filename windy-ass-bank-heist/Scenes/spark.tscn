@@ -10,7 +10,7 @@ collision_layer = 4
 collision_mask = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1390575545]
-z_index = 100
+z_index = 2
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_ygcql")
 
