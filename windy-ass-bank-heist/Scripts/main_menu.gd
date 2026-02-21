@@ -26,4 +26,4 @@ func _on_play_button_pressed():
 
 func _on_quit_button_pressed():
 	print("Quiting ->")
-	emit_signal("quit")
+	get_tree().quit()
