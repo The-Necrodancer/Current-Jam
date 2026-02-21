@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b4hq18ry2n160"]
+
+[ext_resource type="Texture2D" uid="uid://b3agobattbxm0" path="res://Sprites/BasicBlockDemo.png" id="1_6fjg7"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vq5ju"]
+texture = ExtResource("1_6fjg7")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
+
+[sub_resource type="TileSet" id="TileSet_s4cr1"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_vq5ju")
+
+[node name="BasicTilemap" type="TileMapLayer" unique_id=922358941]
+scale = Vector2(3, 3)
+tile_set = SubResource("TileSet_s4cr1")
+navigation_enabled = false
