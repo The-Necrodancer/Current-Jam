@@ -1,4 +1,5 @@
 extends Node2D
+class_name Door
 
 @export var area : Area2D 
 
