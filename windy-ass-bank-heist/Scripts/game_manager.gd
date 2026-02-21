@@ -40,17 +40,20 @@ func load_scene(index:int = 0, packedScene:PackedScene = null):
 	for Door in d:
 		Door.connect("level_reset", reload_current_scene)
 	
+	var g = get_tree().get_nodes_in_group("Gem")
+	for Gem in g:
+		Gem.connect("next_level", load_next_scene)
 
 
 #defaults to title screen if index is out of bounds
 func load_next_scene():
 	remove_current_scene()
 	
-	if cur_level_index + 1 > levels.size() or cur_level_index < 0:
+	if cur_level_index + 1 >= levels.size() or cur_level_index < 0:
 		call_deferred("load_main_menu")
 		return
-	
-	call_deferred("load_scene",cur_level_index + 1)
+	else:
+		call_deferred("load_scene",cur_level_index + 1)
 
 func reload_current_scene():
 	if cur_level_index == -1:
