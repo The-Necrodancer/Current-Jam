@@ -5,13 +5,13 @@
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_68nse"]
 texture = ExtResource("1_csljq")
 0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, -8, 1.6539822, 8, 1.6539822, 8, 8)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3.7432194, 8, -3.7432194, 1.828085, 3.5691166, 1.828085, 4.091427, 8)
 1:0/0 = 0
-1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(2.1762905, 8, 2.0021877, -8, 8, -8, 8, 8)
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(2.3503933, 3.917324, 2.0021877, -4.091425, 8, -4.4396324, 8, 4.091427)
 0:1/0 = 0
-0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.6986008, -8, -2.1762905, 8, -8, 8, -8, -8)
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3.0468063, -4.613735, -3.220909, 4.9619427, -8, 5.31015, -8, -4.787838)
 1:1/0 = 0
-1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -1.6539803, 8, -1.6539803, 8, -8, -8, -8)
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4.2655296, -1.828083, 3.917324, -1.828083, 4.2655296, -8, -4.78784, -8)
 
 [sub_resource type="TileSet" id="TileSet_hurnw"]
 physics_layer_0/collision_layer = 8
