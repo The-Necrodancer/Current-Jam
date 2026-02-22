@@ -24,6 +24,7 @@ func _on_play_button_pressed():
 	print("Play ->")
 	emit_signal("start", 0)
 
+# Quits the game
 func _on_quit_button_pressed():
 	print("Quiting ->")
 	emit_signal("quit")

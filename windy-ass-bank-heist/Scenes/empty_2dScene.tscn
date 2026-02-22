@@ -2,8 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://b4hq18ry2n160" path="res://Tilemap Stuff/BasicTilemap.tscn" id="1_rnf03"]
 [ext_resource type="PackedScene" uid="uid://dectjccxyaw1r" path="res://Scenes/player.tscn" id="2_w7fk8"]
-[ext_resource type="PackedScene" uid="uid://dkdnofof88xja" path="res://Scenes/WireController.tscn" id="3_4574e"]
+[ext_resource type="PackedScene" uid="uid://bhc828t5ibioa" path="res://Scenes/WireController.tscn" id="3_4574e"]
 [ext_resource type="PackedScene" uid="uid://cfne1c7isnf7l" path="res://Scenes/door.tscn" id="4_6yj1h"]
+[ext_resource type="PackedScene" uid="uid://ux2a1ybi88lx" path="res://Scenes/wind.tscn" id="5_c3w37"]
 
 [node name="Empty2dScene" type="Node2D" unique_id=1277267396]
 
@@ -21,3 +22,7 @@ points = PackedVector2Array(48, 48, 144, 48, 144, 192, 720, 192)
 
 [node name="Door" parent="." unique_id=890636085 instance=ExtResource("4_6yj1h")]
 position = Vector2(672, 336)
+
+[node name="Wind" parent="." unique_id=886117404 instance=ExtResource("5_c3w37")]
+position = Vector2(152.00002, 515)
+scale = Vector2(7, 7)
