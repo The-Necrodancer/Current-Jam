@@ -3,6 +3,8 @@ class_name Player
 # I did not tune any of the values relating to the player in the slightest. Im getting it working first and nothing else its 1:17 
 
 @export var GroundCheck : ShapeCast2D
+@export var anim : AnimationPlayer
+@export var sprite : Sprite2D
 
 var move_speed = 12500
 var move_speed_ceil = 500
@@ -48,8 +50,27 @@ func _physics_process(delta: float) -> void:
 	
 	if(grounded):
 		velocity += move_speed * delta * move_input.x * Vector2.RIGHT 
+		
+		if(abs(velocity.x) > 10 ):
+			anim.play("walk")
+		else:
+			anim.play("idle")
 	else:
 		velocity += move_speed * 0.5 * delta * move_input.x * Vector2.RIGHT 
+		
+		if is_hovering:
+			if anim.current_animation != "glide_start" and anim.current_animation != "glide":
+				anim.play("glide_start")
+		else:
+			if(velocity.y < 0):
+				anim.play("jump_asc")
+			else:
+				anim.play("jump_desc")
+	
+	if(velocity.x < 0):
+		sprite.flip_h = true
+	if(velocity.x > 0):
+		sprite.flip_h = false
 	
 	if( abs(velocity.x) > move_speed_ceil):
 		velocity.x += -velocity.normalized().x * (abs(velocity.x) - move_speed_ceil)
@@ -67,10 +88,14 @@ func _physics_process(delta: float) -> void:
 
 	
 	if(Input.is_action_just_pressed("jump") or timer_jump_buf > 0):
-		jump()
+		if grounded or timer_coyote > 0:
+			jump()
+		else:
+			timer_jump_buf = jump_buf_time
 	if(Input.is_action_pressed("jump")):
 		if(velocity.y > 0): # no sense to parachute "upward" so I'm restricting it to descent of the jump
 			is_hovering = true
+			timer_jump_buf = 0
 	if(Input.is_action_just_released("jump")):
 		if velocity.y < 0:
 			velocity *= short_hop_multiplier
@@ -85,9 +110,8 @@ func check_grounded():
 	grounded = g
 
 func jump():
-	if grounded:
+	if grounded || timer_coyote > 0:
 		velocity.y = -jump_vel #y inverted in godot
-	else:
 		timer_jump_buf = 0
 
 func kill():

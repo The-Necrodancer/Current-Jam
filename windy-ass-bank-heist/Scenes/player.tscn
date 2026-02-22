@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dectjccxyaw1r"]
 
 [ext_resource type="Script" uid="uid://bqp6riwsjcnc8" path="res://Scripts/player.gd" id="1_cvnsp"]
-[ext_resource type="Texture2D" uid="uid://bl1b7576mjpom" path="res://Assets/icon.svg" id="2_6t5aa"]
+[ext_resource type="Texture2D" uid="uid://cywowvf05yh3g" path="res://Sprites/player_anim.png" id="2_cvnsp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4flbx"]
 size = Vector2(51, 52)
@@ -12,16 +12,159 @@ size = Vector2(38, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6t5aa"]
 size = Vector2(41, 45)
 
-[node name="Player" type="CharacterBody2D" unique_id=1947678060 node_paths=PackedStringArray("GroundCheck")]
+[sub_resource type="Animation" id="Animation_cvnsp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_3smsa"]
+resource_name = "glide"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [16, 17, 18]
+}
+
+[sub_resource type="Animation" id="Animation_8erm5"]
+resource_name = "glide_start"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [12, 13, 14, 15]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"glide", -1, 1.0, false],
+"method": &"play"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_6t5aa"]
+resource_name = "idle"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_fkybt"]
+resource_name = "jump_asc"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [8, 9]
+}
+
+[sub_resource type="Animation" id="Animation_x3wgy"]
+resource_name = "jump_desc"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [10, 11]
+}
+
+[sub_resource type="Animation" id="Animation_vgqql"]
+resource_name = "walk"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vgqql"]
+_data = {
+&"RESET": SubResource("Animation_cvnsp"),
+&"glide": SubResource("Animation_3smsa"),
+&"glide_start": SubResource("Animation_8erm5"),
+&"idle": SubResource("Animation_6t5aa"),
+&"jump_asc": SubResource("Animation_fkybt"),
+&"jump_desc": SubResource("Animation_x3wgy"),
+&"walk": SubResource("Animation_vgqql")
+}
+
+[node name="Player" type="CharacterBody2D" unique_id=1947678060 node_paths=PackedStringArray("GroundCheck", "anim", "sprite")]
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_cvnsp")
 GroundCheck = NodePath("GroundCheck")
+anim = NodePath("AnimationPlayer")
+sprite = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1486239105]
-position = Vector2(25.599998, -25.400002)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("2_6t5aa")
+position = Vector2(25, -46)
+scale = Vector2(3, 3)
+texture = ExtResource("2_cvnsp")
+hframes = 19
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=461690700]
 position = Vector2(25.6, -25.400002)
@@ -41,5 +184,8 @@ collision_mask = 8
 position = Vector2(-0.5, 2.5)
 shape = SubResource("RectangleShape2D_6t5aa")
 debug_color = Color(0.99632686, 0, 0.19754419, 0.41960785)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1830896705]
+libraries/ = SubResource("AnimationLibrary_vgqql")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_hurtbox_body_entered"]
