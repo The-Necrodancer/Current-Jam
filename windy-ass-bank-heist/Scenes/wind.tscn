@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w3k0u"]
 
 [node name="Wind" type="Area2D" unique_id=886117404]
-collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_gc4i6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1971043242]
