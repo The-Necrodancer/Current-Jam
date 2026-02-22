@@ -12,8 +12,10 @@ func _ready() -> void:
 	if wind_direction.length() == 0:
 		wind_direction = Vector2.RIGHT
 
-	body_entered.connect(_on_body_entered)
-	body_exited.connect(_on_body_exited)
+	if not body_entered.is_connected(_on_body_entered):
+		body_entered.connect(_on_body_entered)
+	if not body_exited.is_connected(_on_body_exited):
+		body_exited.connect(_on_body_exited)
 
 # Handles the physics of the wind
 func _physics_process(delta: float) -> void:

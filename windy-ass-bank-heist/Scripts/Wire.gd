@@ -34,7 +34,7 @@ func _physics_process(delta: float) -> void:
 
 func start():
 	cur_spark = spark.instantiate()
-	self.add_child(cur_spark)
+	self.call_deferred("add_child",cur_spark)
 	
 	cur_spark.global_position = SparkPath.get_point_position(0)
 	cur_index = 0
