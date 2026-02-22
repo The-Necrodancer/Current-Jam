@@ -5,6 +5,7 @@
 [node name="Wind" type="Area2D" unique_id=886117404]
 collision_mask = 3
 script = ExtResource("1_gc4i6")
+wind_direction = Vector2(0, -1)
 wind_strength = 4000.0
 max_speed_added = 400.0
 

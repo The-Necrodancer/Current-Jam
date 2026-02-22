@@ -76,8 +76,6 @@ func _physics_process(delta: float) -> void:
 			velocity *= short_hop_multiplier
 		is_hovering = false
 	
-	print(velocity)
-	
 	move_and_slide()
 
 func check_grounded():

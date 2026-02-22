@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://tqqt50fmdx1m"]
-
-[ext_resource type="Script" uid="uid://du0tbx5geevqm" path="res://Scripts/Wire.gd" id="1_imld6"]
-[ext_resource type="PackedScene" uid="uid://c80f0jpperiy7" path="res://Scenes/spark.tscn" id="2_amh6y"]
-
-[node name="Wire" type="Node2D" unique_id=9856284]
-script = ExtResource("1_imld6")
-spark = ExtResource("2_amh6y")

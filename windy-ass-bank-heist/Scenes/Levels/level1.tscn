@@ -8,10 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://3aebq2xa05pm" path="res://Scenes/gem.tscn" id="5_c3w37"]
 [ext_resource type="PackedScene" uid="uid://nshtepqpar2j" path="res://Tilemap Stuff/SpikeTilemap.tscn" id="7_n2h36"]
 [ext_resource type="PackedScene" uid="uid://c4512pji0h4i4" path="res://Tilemap Stuff/WireTilemap.tscn" id="8_8onv0"]
+[ext_resource type="PackedScene" uid="uid://woh4wy1xm1d3" path="res://Scenes/Fan/fan_block.tscn" id="9_ir7pk"]
 [ext_resource type="PackedScene" uid="uid://cxb0nu6252c2u" path="res://Scenes/wind.tscn" id="9_jgkgd"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hkfpk"]
-size = Vector2(96, 528)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ilsv2"]
+size = Vector2(96, 480)
 
 [node name="level1" type="Node2D" unique_id=875911448 node_paths=PackedStringArray("player", "end_door", "end_gem")]
 script = ExtResource("1_c3w37")
@@ -44,11 +45,15 @@ tile_map_data = PackedByteArray("AAAGAAwAAAAAAAAAAAAHAAwAAAAAAAAAAAAIAAwAAAAAAAA
 [node name="WireTilemap" parent="." unique_id=1923152713 instance=ExtResource("8_8onv0")]
 tile_map_data = PackedByteArray("AAAAAAAAAAAAAAMAAAABAAAAAAACAAEAAAACAAAAAAACAAEAAAADAAAAAAACAAEAAAAEAAAAAAACAAEAAAAFAAAAAAACAAEAAAAGAAAAAAACAAEAAAAHAAAAAAACAAEAAAAIAAAAAAACAAEAAAAJAAAAAAACAAEAAAAKAAAAAAACAAEAAAALAAAAAAACAAEAAAAMAAAAAAACAAEAAAANAAAAAAACAAEAAAAOAAAAAAACAAEAAAAPAAAAAAACAAEAAAAQAAAAAAACAAEAAAARAAAAAAACAAEAAAASAAAAAAABAAAAAAASAAEAAAACAAAAAAASAAIAAAAAAAIAAAA=")
 
-[node name="Wind" parent="." unique_id=886117404 node_paths=PackedStringArray("collision_shape") instance=ExtResource("9_jgkgd")]
-position = Vector2(720, 528)
-wind_direction = Vector2(0, -1)
-collision_shape = NodePath("CollisionShape2D")
+[node name="FanBlock" parent="." unique_id=1906170809 instance=ExtResource("9_ir7pk")]
+position = Vector2(672, 576)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wind" unique_id=168027191]
-position = Vector2(0, -216)
-shape = SubResource("RectangleShape2D_hkfpk")
+[node name="FanBlock2" parent="." unique_id=311119193 instance=ExtResource("9_ir7pk")]
+position = Vector2(720, 576)
+
+[node name="Wind" parent="." unique_id=886117404 instance=ExtResource("9_jgkgd")]
+position = Vector2(720, 480)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wind" unique_id=1202195491]
+position = Vector2(0, -192)
+shape = SubResource("RectangleShape2D_ilsv2")

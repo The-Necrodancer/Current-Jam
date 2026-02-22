@@ -52,7 +52,7 @@ func load_scene(index:int = 0, packedScene:PackedScene = null):
 	if cur_level is Level:
 		cur_level.gameManager = self
 	
-	self.call_deferred("add_child",cur_level)
+	self.add_child(cur_level)
 
 
 
