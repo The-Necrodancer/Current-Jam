@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://3aebq2xa05pm"]
+
+[ext_resource type="Script" uid="uid://djgyl1s7dciqj" path="res://Scripts/gem.gd" id="1_0xstn"]
+[ext_resource type="Texture2D" uid="uid://bl1b7576mjpom" path="res://Assets/icon.svg" id="1_bti4x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qq0xe"]
+size = Vector2(96, 96)
+
+[node name="Gem" type="Area2D" unique_id=1617286755 groups=["Gem"]]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_0xstn")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1472159007]
+position = Vector2(-2.861023e-06, -48.000004)
+scale = Vector2(0.74999994, 0.74999994)
+texture = ExtResource("1_bti4x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=339555266]
+position = Vector2(0, -48)
+shape = SubResource("RectangleShape2D_qq0xe")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

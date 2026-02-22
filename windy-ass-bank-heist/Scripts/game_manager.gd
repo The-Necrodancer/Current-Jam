@@ -42,31 +42,29 @@ func quit_game():
 func load_scene(index:int = 0, packedScene:PackedScene = null):
 	remove_current_scene()
 	
-	var cur_level : Node2D
+	var cur_level
 	if packedScene == null:
 		cur_level = await levels[index].instantiate()
 		cur_level_index = index
 	else:
 		cur_level = await packedScene.instantiate()
 	
-	self.add_child(cur_level)
+	if cur_level is Level:
+		cur_level.gameManager = self
 	
-	#Connects Doors to level manager
-	var d = get_tree().get_nodes_in_group("Door")
-	for Door in d:
-		Door.connect("level_reset", reload_current_scene)
-	
+	self.call_deferred("add_child",cur_level)
+
 
 
 #defaults to title screen if index is out of bounds
 func load_next_scene():
 	remove_current_scene()
 	
-	if cur_level_index + 1 > levels.size() or cur_level_index < 0:
+	if cur_level_index + 1 >= levels.size() or cur_level_index < 0:
 		call_deferred("load_main_menu")
 		return
-	
-	call_deferred("load_scene",cur_level_index + 1)
+	else:
+		call_deferred("load_scene",cur_level_index + 1)
 
 func reload_current_scene():
 	if cur_level_index == -1:
