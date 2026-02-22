@@ -4,10 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://ddb8w0tkm1aqo" path="res://Scenes/Main Menu/main_menu.tscn" id="2_mmt5l"]
 [ext_resource type="PackedScene" uid="uid://4fy4jm20u5ij" path="res://Scenes/Main Menu/credits.tscn" id="3_mmt5l"]
 [ext_resource type="PackedScene" uid="uid://b33fs02ep3s6t" path="res://Scenes/Levels/level1.tscn" id="4_mmt5l"]
+[ext_resource type="PackedScene" uid="uid://cxse4gl3gprcj" path="res://Scenes/Levels/level_2.tscn" id="5_fgdfb"]
 
 [node name="GameManager" type="Node2D" unique_id=1496258959]
 script = ExtResource("1_e5fcp")
 MainMenuScene = ExtResource("2_mmt5l")
 CreditsScene = ExtResource("3_mmt5l")
-levels = Array[PackedScene]([ExtResource("4_mmt5l")])
+levels = Array[PackedScene]([ExtResource("4_mmt5l"), ExtResource("5_fgdfb")])
 metadata/_edit_group_ = true

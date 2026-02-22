@@ -1,0 +1,36 @@
+[gd_scene format=4 uid="uid://bril1164tfbry"]
+
+[ext_resource type="Script" uid="uid://6t8efmx5m2rt" path="res://Scripts/level.gd" id="1_nfly3"]
+[ext_resource type="PackedScene" uid="uid://3aebq2xa05pm" path="res://Scenes/gem.tscn" id="2_rc141"]
+[ext_resource type="PackedScene" uid="uid://b4hq18ry2n160" path="res://Tilemap Stuff/BasicTilemap.tscn" id="2_t8c31"]
+[ext_resource type="PackedScene" uid="uid://dectjccxyaw1r" path="res://Scenes/player.tscn" id="3_rc141"]
+[ext_resource type="PackedScene" uid="uid://cfne1c7isnf7l" path="res://Scenes/door.tscn" id="5_yy6i0"]
+[ext_resource type="PackedScene" uid="uid://cxb0nu6252c2u" path="res://Scenes/wind.tscn" id="6_yy6i0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_167vu"]
+size = Vector2(864, 509)
+
+[node name="level3" type="Node2D" unique_id=1804281567 node_paths=PackedStringArray("player", "end_door", "end_gem")]
+script = ExtResource("1_nfly3")
+player = NodePath("Player")
+end_door = NodePath("Door")
+end_gem = NodePath("Gem")
+metadata/_custom_type_script = "uid://6t8efmx5m2rt"
+
+[node name="Gem" parent="." unique_id=1617286755 instance=ExtResource("2_rc141")]
+
+[node name="BasicTilemap" parent="." unique_id=922358941 instance=ExtResource("2_t8c31")]
+tile_map_data = PackedByteArray("AAAAAA0AAQABAAQAAAABAA0AAQABAAQAAAACAA0AAQABAAQAAAADAA0AAQABAAQAAAAEAA0AAQABAAQAAAAFAA0AAQABAAQAAAAGAA0AAQABAAQAAAAHAA0AAQABAAQAAAAIAA0AAQABAAQAAAAJAA0AAQABAAQAAAAKAA0AAQABAAQAAAALAA0AAQABAAQAAAAMAA0AAQABAAQAAAANAA0AAQABAAQAAAAOAA0AAQABAAQAAAAPAA0AAQABAAQAAAAQAA0AAQABAAQAAAARAA0AAQABAAQAAAASAA0AAQABAAQAAAATAA0AAQABAAQAAAAUAA0AAQABAAQAAAAVAA0AAQABAAQAAAAWAA0AAQABAAQAAAAXAA0AAQABAAQAAAAAAAwAAQACAAUAAAAAAAsAAQACAAUAAAAAAAoAAQACAAUAAAAAAAkAAQACAAUAAAD//wkAAQACAAUAAAD//wgAAQACAAUAAAD//wcAAQACAAUAAAD//wYAAQACAAUAAAD//wUAAQACAAUAAAD//wQAAQACAAUAAAAAAAQAAQACAAUAAAAAAAUAAQACAAUAAAAAAAYAAQACAAUAAAAAAAcAAQACAAUAAAAAAAgAAQACAAUAAAAAAAAAAQACAAUAAAAAAAEAAQACAAUAAAAAAAIAAQACAAUAAAAAAAMAAQACAAUAAAAXAAAAAQAAAAUAAAAXAAEAAQAAAAUAAAAXAAIAAQAAAAUAAAAXAAMAAQAAAAUAAAAXAAQAAQAAAAUAAAAXAAUAAQAAAAUAAAAXAAYAAQAAAAUAAAAXAAcAAQAAAAUAAAAXAAgAAQAAAAUAAAAXAAkAAQAAAAUAAAAXAAoAAQAAAAUAAAAXAAsAAQAAAAUAAAAXAAwAAQAAAAUAAAA=")
+
+[node name="Player" parent="." unique_id=1947678060 instance=ExtResource("3_rc141")]
+position = Vector2(48, 624)
+
+[node name="Door" parent="." unique_id=890636085 instance=ExtResource("5_yy6i0")]
+
+[node name="Wind" parent="." unique_id=886117404 node_paths=PackedStringArray("collision_shape") instance=ExtResource("6_yy6i0")]
+wind_strength = 9999.0
+collision_shape = NodePath("CollisionShape2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wind" unique_id=384182103]
+position = Vector2(576, 350.5)
+shape = SubResource("RectangleShape2D_167vu")

@@ -10,9 +10,10 @@ var gravity = 2000
 var ground_decel = 0.6
 var air_decel = 0.95
 var jump_vel = 1000
+var up_draft_vel = -300
 var coyote_time = 0.2
 var jump_buf_time = 0.2
-var short_hop_multiplier = 1.0
+var short_hop_multiplier = 0.4
 
 
 var move_input : Vector2 = Vector2.ZERO
@@ -23,6 +24,8 @@ var timer_jump_buf = 0
 # handles the hovering features
 var is_hovering = false
 var hover_decel = 0.8
+
+var up_draft = false
 
 signal on_death
 
@@ -51,23 +54,29 @@ func _physics_process(delta: float) -> void:
 	if( abs(velocity.x) > move_speed_ceil):
 		velocity.x += -velocity.normalized().x * (abs(velocity.x) - move_speed_ceil)
 	
-	if(grounded):
+	if(grounded and !up_draft):
 		velocity *= ground_decel
 	else:
-		if(not is_hovering):
-			velocity *= air_decel
-		else:
+		if(up_draft and is_hovering):
+			velocity.y = up_draft_vel
+		elif(is_hovering):
 			velocity *= Vector2(air_decel, hover_decel) 
+		else:
+			velocity *= air_decel
+
+
 	
 	if(Input.is_action_just_pressed("jump") or timer_jump_buf > 0):
 		jump()
-	if(Input.is_action_just_pressed("jump")):
+	if(Input.is_action_pressed("jump")):
 		if(velocity.y > 0): # no sense to parachute "upward" so I'm restricting it to descent of the jump
 			is_hovering = true
 	if(Input.is_action_just_released("jump")):
 		if velocity.y < 0:
 			velocity *= short_hop_multiplier
 		is_hovering = false
+	
+	print(velocity)
 	
 	move_and_slide()
 
