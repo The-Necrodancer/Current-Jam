@@ -46,15 +46,12 @@ tile_map_data = PackedByteArray("AAAGAAwAAAAAAAAAAAAHAAwAAAAAAAAAAAAIAAwAAAAAAAA
 [node name="WireTilemap" parent="." unique_id=1923152713 instance=ExtResource("8_8onv0")]
 tile_map_data = PackedByteArray("AAAAAAAAAAAAAAMAAAABAAAAAAACAAEAAAACAAAAAAACAAEAAAADAAAAAAACAAEAAAAEAAAAAAACAAEAAAAFAAAAAAACAAEAAAAGAAAAAAACAAEAAAAHAAAAAAACAAEAAAAIAAAAAAACAAEAAAAJAAAAAAACAAEAAAAKAAAAAAACAAEAAAALAAAAAAACAAEAAAAMAAAAAAACAAEAAAANAAAAAAACAAEAAAAOAAAAAAACAAEAAAAPAAAAAAACAAEAAAAQAAAAAAACAAEAAAARAAAAAAACAAEAAAASAAAAAAABAAAAAAASAAEAAAACAAAAAAASAAIAAAAAAAIAAAA=")
 
-[node name="FanBlock" parent="." unique_id=1906170809 instance=ExtResource("9_ir7pk")]
-position = Vector2(672, 576)
-
-[node name="FanBlock2" parent="." unique_id=311119193 instance=ExtResource("9_ir7pk")]
-position = Vector2(720, 576)
-
 [node name="Wind" parent="." unique_id=886117404 instance=ExtResource("9_jgkgd")]
 position = Vector2(720, 480)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wind" unique_id=1202195491]
 position = Vector2(0, -192)
 shape = SubResource("RectangleShape2D_ilsv2")
+
+[node name="FanBlock" parent="." unique_id=1906170809 instance=ExtResource("9_ir7pk")]
+position = Vector2(672, 576)

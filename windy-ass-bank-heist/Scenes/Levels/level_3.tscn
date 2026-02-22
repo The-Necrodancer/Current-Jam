@@ -55,10 +55,7 @@ position = Vector2(288, 240)
 position = Vector2(480, 624)
 enabled = false
 wind = NodePath("Wind")
-fans = [NodePath("FanBlock"), NodePath("FanBlock2")]
-
-[node name="FanBlock" parent="FanController" unique_id=1906170809 instance=ExtResource("7_dl55b")]
-position = Vector2(0, -48)
+fans = [NodePath("FanBlock2")]
 
 [node name="Wind" parent="FanController" unique_id=886117404 instance=ExtResource("6_yy6i0")]
 position = Vector2(24, 28)

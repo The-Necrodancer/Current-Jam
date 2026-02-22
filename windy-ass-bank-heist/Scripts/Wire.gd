@@ -21,7 +21,6 @@ func _physics_process(delta: float) -> void:
 	if(is_traveling == false):
 		return
 	
-	
 	cur_spark.global_position += move_speed * delta * (SparkPath.get_point_position(cur_index + 1) - SparkPath.get_point_position(cur_index)).normalized() #get movement vector and normalize it for direction
 	
 	#change target point
