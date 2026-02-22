@@ -4,6 +4,7 @@ class_name Wire
 @export var spark : PackedScene
 @export var SparkPath : Line2D
 
+@export var auto_start : bool = false
 @export var move_speed : float = 150 #the constant velocity of the node
 
 var cur_spark = null
@@ -13,11 +14,13 @@ var cur_index = 0
 var is_traveling = false
 
 func _ready() -> void:
-	call_deferred("start") #make it on "level start" later when we implement that
+	if(auto_start):
+		call_deferred("start") #make it on "level start" later when we implement that
 
 func _physics_process(delta: float) -> void:
 	if(is_traveling == false):
 		return
+	
 	
 	cur_spark.global_position += move_speed * delta * (SparkPath.get_point_position(cur_index + 1) - SparkPath.get_point_position(cur_index)).normalized() #get movement vector and normalize it for direction
 	
