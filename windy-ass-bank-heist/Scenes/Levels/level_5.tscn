@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c4512pji0h4i4" path="res://Tilemap Stuff/WireTilemap.tscn" id="7_20kd1"]
 [ext_resource type="PackedScene" uid="uid://cxb0nu6252c2u" path="res://Scenes/wind.tscn" id="8_evokg"]
 [ext_resource type="PackedScene" uid="uid://woh4wy1xm1d3" path="res://Scenes/Fan/fan_block.tscn" id="10_3koi7"]
+[ext_resource type="PackedScene" uid="uid://cjkwboeocvoip" path="res://Scenes/Fan/particle_wind.tscn" id="11_evokg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_20kd1"]
 size = Vector2(864, 586)
@@ -80,3 +81,30 @@ position = Vector2(96, -336)
 
 [node name="FanBlock9" parent="fans" unique_id=1391390897 instance=ExtResource("10_3koi7")]
 position = Vector2(192, -336)
+
+[node name="Particle_wind" parent="fans" unique_id=320778406 instance=ExtResource("11_evokg")]
+position = Vector2(-528, -48)
+
+[node name="Particle_wind2" parent="fans" unique_id=804194185 instance=ExtResource("11_evokg")]
+position = Vector2(-432, -264)
+
+[node name="Particle_wind3" parent="fans" unique_id=14178862 instance=ExtResource("11_evokg")]
+position = Vector2(-336, -264)
+
+[node name="Particle_wind4" parent="fans" unique_id=1812088250 instance=ExtResource("11_evokg")]
+position = Vector2(-240, -24)
+
+[node name="Particle_wind5" parent="fans" unique_id=363346320 instance=ExtResource("11_evokg")]
+position = Vector2(-144, -120)
+
+[node name="Particle_wind6" parent="fans" unique_id=397840264 instance=ExtResource("11_evokg")]
+position = Vector2(-48, -120)
+
+[node name="Particle_wind7" parent="fans" unique_id=414543494 instance=ExtResource("11_evokg")]
+position = Vector2(48, -24)
+
+[node name="Particle_wind8" parent="fans" unique_id=2145181257 instance=ExtResource("11_evokg")]
+position = Vector2(144, -360)
+
+[node name="Particle_wind9" parent="fans" unique_id=2012387230 instance=ExtResource("11_evokg")]
+position = Vector2(240, -360)
