@@ -3,10 +3,11 @@
 [ext_resource type="Script" uid="uid://dgcv5phe8es8p" path="res://Scripts/credits.gd" id="1_1bamb"]
 [ext_resource type="Texture2D" uid="uid://bhjntx87mwqqs" path="res://Assets/text_box.png" id="1_gryuy"]
 [ext_resource type="FontFile" uid="uid://bdmkc1uih2gc3" path="res://Assets/shovel-knight-extended.ttf" id="2_1bamb"]
+[ext_resource type="Texture2D" uid="uid://c5x5fdtpgdm32" path="res://Sprites/bg.png" id="2_63n6r"]
 [ext_resource type="Texture2D" uid="uid://1ll4k4h0yq82" path="res://Assets/Custom_Godot_Icon_Purple.svg" id="2_ccovl"]
 [ext_resource type="Texture2D" uid="uid://djh4ajsmwvad2" path="res://Assets/fish.png" id="5_xelri"]
 
-[node name="Control2" type="Control" unique_id=1367188092]
+[node name="Control3" type="Control" unique_id=1367188092]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,7 +21,7 @@ texture_filter = 1
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 672.0
-texture = ExtResource("1_gryuy")
+texture = ExtResource("2_63n6r")
 
 [node name="CreditsTitle" type="RichTextLabel" parent="." unique_id=1762547136]
 layout_mode = 0
@@ -75,5 +76,9 @@ icon = ExtResource("1_gryuy")
 flat = true
 autowrap_trim_flags = 0
 icon_alignment = 1
+
+[node name="Bg" type="Sprite2D" parent="." unique_id=1762879641]
+position = Vector2(-850, 2483)
+texture = ExtResource("2_63n6r")
 
 [connection signal="pressed" from="Return_Button" to="." method="_on_return_button_pressed"]
