@@ -1,0 +1,33 @@
+[gd_scene format=4 uid="uid://blxcnehbspvol"]
+
+[ext_resource type="Script" uid="uid://6t8efmx5m2rt" path="res://Scripts/level.gd" id="1_uphwc"]
+[ext_resource type="PackedScene" uid="uid://3aebq2xa05pm" path="res://Scenes/gem.tscn" id="2_04af2"]
+[ext_resource type="PackedScene" uid="uid://cfne1c7isnf7l" path="res://Scenes/door.tscn" id="3_nbcmv"]
+[ext_resource type="PackedScene" uid="uid://b4hq18ry2n160" path="res://Tilemap Stuff/BasicTilemap.tscn" id="4_bu08x"]
+[ext_resource type="PackedScene" uid="uid://dectjccxyaw1r" path="res://Scenes/player.tscn" id="5_8vqsf"]
+[ext_resource type="PackedScene" uid="uid://nshtepqpar2j" path="res://Tilemap Stuff/SpikeTilemap.tscn" id="6_jni50"]
+[ext_resource type="PackedScene" uid="uid://c4512pji0h4i4" path="res://Tilemap Stuff/WireTilemap.tscn" id="7_npoen"]
+
+[node name="Level" type="Node2D" unique_id=1257747170 node_paths=PackedStringArray("player", "end_door", "end_gem")]
+script = ExtResource("1_uphwc")
+player = NodePath("Player")
+end_door = NodePath("Door")
+end_gem = NodePath("Gem")
+metadata/_custom_type_script = "uid://6t8efmx5m2rt"
+
+[node name="Gem" parent="." unique_id=1617286755 instance=ExtResource("2_04af2")]
+position = Vector2(96, 432)
+
+[node name="Door" parent="." unique_id=890636085 instance=ExtResource("3_nbcmv")]
+position = Vector2(192, 432)
+
+[node name="BasicTilemap" parent="." unique_id=922358941 instance=ExtResource("4_bu08x")]
+tile_map_data = PackedByteArray("AAAAAAEAAQACAAUAAAAAAAIAAQACAAUAAAAAAAMAAQACAAUAAAAAAAQAAQACAAUAAAAAAAUAAQADAAYAAAABAAUAAQABAAQAAAACAAUAAQABAAQAAAADAAUAAQABAAQAAAAEAAUAAQABAAQAAAAFAAUAAQACAAQAAAAAAAAAAQADAAQAAAACAAAAAQABAAYAAAADAAAAAQABAAYAAAAEAAAAAQABAAYAAAAFAAAAAQABAAYAAAAGAAAAAQACAAYAAAABAAAAAQABAAYAAAADAA0AAQABAAQAAAAEAA0AAQABAAQAAAAFAA0AAQABAAQAAAAGAA0AAQABAAQAAAAHAA0AAQABAAQAAAAIAA0AAQABAAQAAAAJAA0AAQABAAQAAAAKAA0AAQABAAQAAAALAA0AAQABAAQAAAAMAA0AAQABAAQAAAANAA0AAQABAAQAAAAOAA0AAQABAAQAAAAPAA0AAQABAAQAAAAQAA0AAQABAAQAAAARAA0AAQABAAQAAAASAA0AAQABAAQAAAATAA0AAQABAAQAAAAUAA0AAQABAAQAAAAEAAkAAQACAAQAAAAKAAAAAQAAAAYAAAALAAAAAQABAAYAAAAMAAEAAQAAAAYAAAAOAAIAAQAAAAYAAAAPAAMAAQAAAAYAAAAQAAUAAQAAAAYAAAARAAgAAQAAAAYAAAANAAEAAQABAAYAAAAOAAEAAQAFAAQAAAAMAAAAAQAFAAQAAAAPAAIAAQAFAAQAAAAQAAQAAQAAAAUAAAAQAAMAAQAFAAQAAAARAAYAAQAAAAUAAAARAAcAAQAAAAUAAAARAAUAAQAFAAQAAAASAAgAAQABAAYAAAA=")
+
+[node name="Player" parent="." unique_id=1947678060 instance=ExtResource("5_8vqsf")]
+position = Vector2(96, 192)
+
+[node name="SpikeTilemap" parent="." unique_id=1876759003 instance=ExtResource("6_jni50")]
+tile_map_data = PackedByteArray("AAAHAAMAAAAAAAAAAAAHAAAAAAABAAEAAAAIAAAAAAABAAEAAAAGAAQAAAAAAAAAAAAIAAMAAAAAAAAAAAAJAAMAAAAAAAAAAAAKAAQAAAAAAAAAAAALAAUAAAAAAAAAAAAMAAYAAAAAAAEAAAAGAAEAAAABAAEAAAAJAAAAAAABAAEAAAAKAAEAAAABAAEAAAALAAEAAAABAAEAAAAMAAIAAAABAAEAAAANAAIAAAABAAEAAAAOAAMAAAABAAEAAAAPAAQAAAABAAAAAAAPAAUAAAABAAAAAAAQAAYAAAABAAAAAAAQAAcAAAABAAAAAAAQAAgAAAABAAAAAAAMAAcAAAAAAAEAAAAMAAgAAAAAAAEAAAARAAkAAAABAAEAAAASAAkAAAABAAEAAAAOAAwAAAAAAAAAAAANAAwAAAAAAAAAAAAPAAwAAAAAAAAAAAAQAAwAAAAAAAAAAAA=")
+
+[node name="WireTilemap" parent="." unique_id=1923152713 instance=ExtResource("7_npoen")]

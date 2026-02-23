@@ -8,10 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://buh0x5cpyyus4" path="res://Scenes/Levels/level_5.tscn" id="6_efn8y"]
 [ext_resource type="PackedScene" uid="uid://bril1164tfbry" path="res://Scenes/Levels/level_3.tscn" id="6_yqty0"]
 [ext_resource type="PackedScene" uid="uid://cf32hrhj4d1af" path="res://Scenes/Levels/level_4.tscn" id="7_71d4j"]
+[ext_resource type="PackedScene" uid="uid://blxcnehbspvol" path="res://Scenes/Levels/leve_6.tscn" id="9_i4mau"]
 
 [node name="GameManager" type="Node2D" unique_id=1496258959]
 script = ExtResource("1_e5fcp")
 MainMenuScene = ExtResource("2_mmt5l")
 CreditsScene = ExtResource("3_mmt5l")
-levels = Array[PackedScene]([ExtResource("4_mmt5l"), ExtResource("5_fgdfb"), ExtResource("6_efn8y"), ExtResource("6_yqty0"), ExtResource("7_71d4j")])
+levels = Array[PackedScene]([ExtResource("4_mmt5l"), ExtResource("5_fgdfb"), ExtResource("6_efn8y"), ExtResource("6_yqty0"), ExtResource("7_71d4j"), ExtResource("9_i4mau")])
 metadata/_edit_group_ = true
