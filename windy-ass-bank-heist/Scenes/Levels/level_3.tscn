@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bhc828t5ibioa" path="res://Scenes/WireController.tscn" id="7_4ahh4"]
 [ext_resource type="PackedScene" uid="uid://woh4wy1xm1d3" path="res://Scenes/Fan/fan_block.tscn" id="7_dl55b"]
 [ext_resource type="PackedScene" uid="uid://brnuwwb6omkhj" path="res://Scenes/button.tscn" id="11_sy7oa"]
+[ext_resource type="PackedScene" uid="uid://cjkwboeocvoip" path="res://Scenes/Fan/particle_wind.tscn" id="12_sy7oa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ahh4"]
 size = Vector2(96, 576)
@@ -51,11 +52,12 @@ position = Vector2(144, 576)
 [node name="Door" parent="." unique_id=890636085 instance=ExtResource("5_yy6i0")]
 position = Vector2(288, 240)
 
-[node name="FanController" parent="." unique_id=533134196 node_paths=PackedStringArray("wind", "fans") instance=ExtResource("6_x1k1j")]
+[node name="FanController" parent="." unique_id=533134196 node_paths=PackedStringArray("wind", "fans", "fan_particles") instance=ExtResource("6_x1k1j")]
 position = Vector2(480, 624)
 enabled = false
 wind = NodePath("Wind")
 fans = [NodePath("FanBlock2")]
+fan_particles = [NodePath("../Particle_wind")]
 
 [node name="Wind" parent="FanController" unique_id=886117404 instance=ExtResource("6_yy6i0")]
 position = Vector2(24, 28)
@@ -70,3 +72,6 @@ position = Vector2(-48, -48)
 [node name="Button" parent="." unique_id=1493427791 node_paths=PackedStringArray("wire") instance=ExtResource("11_sy7oa")]
 position = Vector2(960, 480)
 wire = NodePath("../WireController")
+
+[node name="Particle_wind" parent="." unique_id=320778406 instance=ExtResource("12_sy7oa")]
+position = Vector2(480, 560)

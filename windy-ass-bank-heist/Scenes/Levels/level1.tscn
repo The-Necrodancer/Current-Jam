@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c4512pji0h4i4" path="res://Tilemap Stuff/WireTilemap.tscn" id="8_8onv0"]
 [ext_resource type="PackedScene" uid="uid://woh4wy1xm1d3" path="res://Scenes/Fan/fan_block.tscn" id="9_ir7pk"]
 [ext_resource type="PackedScene" uid="uid://cxb0nu6252c2u" path="res://Scenes/wind.tscn" id="9_jgkgd"]
+[ext_resource type="PackedScene" uid="uid://cjkwboeocvoip" path="res://Scenes/Fan/particle_wind.tscn" id="11_ilsv2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ilsv2"]
 size = Vector2(96, 480)
@@ -55,3 +56,6 @@ shape = SubResource("RectangleShape2D_ilsv2")
 
 [node name="FanBlock" parent="." unique_id=1906170809 instance=ExtResource("9_ir7pk")]
 position = Vector2(672, 576)
+
+[node name="Particle_wind" parent="." unique_id=320778406 instance=ExtResource("11_ilsv2")]
+position = Vector2(720, 544)
