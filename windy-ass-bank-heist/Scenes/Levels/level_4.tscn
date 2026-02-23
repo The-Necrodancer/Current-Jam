@@ -82,7 +82,7 @@ position = Vector2(48, -80)
 position = Vector2(528, 432)
 wind = NodePath("Wind")
 fans = [NodePath("FanBlock")]
-timer_length = 0.9
+timer_length = 1.0
 fan_particles = [NodePath("Particle_wind2")]
 
 [node name="FanBlock" parent="FanController2" unique_id=354594687 instance=ExtResource("6_i5g5g")]
@@ -101,7 +101,7 @@ position = Vector2(48, -64)
 position = Vector2(336, 672)
 wind = NodePath("Wind")
 fans = [NodePath("FanBlock")]
-timer_length = 1.5
+timer_length = 1.0
 fan_particles = [NodePath("Particle_wind")]
 
 [node name="FanBlock" parent="FanController" unique_id=357664970 instance=ExtResource("6_i5g5g")]

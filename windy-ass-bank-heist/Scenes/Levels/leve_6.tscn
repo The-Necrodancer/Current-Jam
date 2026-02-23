@@ -1,0 +1,118 @@
+[gd_scene format=4 uid="uid://blxcnehbspvol"]
+
+[ext_resource type="Script" uid="uid://6t8efmx5m2rt" path="res://Scripts/level.gd" id="1_uphwc"]
+[ext_resource type="PackedScene" uid="uid://3aebq2xa05pm" path="res://Scenes/gem.tscn" id="2_04af2"]
+[ext_resource type="PackedScene" uid="uid://cfne1c7isnf7l" path="res://Scenes/door.tscn" id="3_nbcmv"]
+[ext_resource type="PackedScene" uid="uid://b4hq18ry2n160" path="res://Tilemap Stuff/BasicTilemap.tscn" id="4_bu08x"]
+[ext_resource type="PackedScene" uid="uid://dectjccxyaw1r" path="res://Scenes/player.tscn" id="5_8vqsf"]
+[ext_resource type="PackedScene" uid="uid://nshtepqpar2j" path="res://Tilemap Stuff/SpikeTilemap.tscn" id="6_jni50"]
+[ext_resource type="PackedScene" uid="uid://c4512pji0h4i4" path="res://Tilemap Stuff/WireTilemap.tscn" id="7_npoen"]
+[ext_resource type="PackedScene" uid="uid://brnuwwb6omkhj" path="res://Scenes/button.tscn" id="8_04af2"]
+[ext_resource type="PackedScene" uid="uid://bhc828t5ibioa" path="res://Scenes/WireController.tscn" id="8_nbcmv"]
+[ext_resource type="PackedScene" uid="uid://omkxcg0alll2" path="res://Scenes/Fan/FanController.tscn" id="10_jni50"]
+[ext_resource type="PackedScene" uid="uid://cxb0nu6252c2u" path="res://Scenes/wind.tscn" id="11_npoen"]
+[ext_resource type="PackedScene" uid="uid://woh4wy1xm1d3" path="res://Scenes/Fan/fan_block.tscn" id="12_81tvj"]
+[ext_resource type="PackedScene" uid="uid://cjkwboeocvoip" path="res://Scenes/Fan/particle_wind.tscn" id="13_npoen"]
+[ext_resource type="Texture2D" uid="uid://cdwfca04c7bsd" path="res://Sprites/windy_a_banks_background_cosmetic_sprite.png" id="14_81tvj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tcnmj"]
+size = Vector2(576, 576)
+
+[node name="Level" type="Node2D" unique_id=1257747170 node_paths=PackedStringArray("player", "end_door", "end_gem")]
+script = ExtResource("1_uphwc")
+player = NodePath("Player")
+end_door = NodePath("Door")
+end_gem = NodePath("Gem")
+metadata/_custom_type_script = "uid://6t8efmx5m2rt"
+
+[node name="Gem" parent="." unique_id=1617286755 instance=ExtResource("2_04af2")]
+position = Vector2(96, 480)
+
+[node name="Door" parent="." unique_id=890636085 instance=ExtResource("3_nbcmv")]
+position = Vector2(192, 480)
+
+[node name="WireController" parent="." unique_id=9856284 node_paths=PackedStringArray("SparkPath") instance=ExtResource("8_nbcmv")]
+SparkPath = NodePath("Line2D")
+auto_start = true
+
+[node name="Line2D" type="Line2D" parent="WireController" unique_id=407450925]
+points = PackedVector2Array(312, 24, 24, 24, 24, 264, 408, 264, 408, 312, 168, 312)
+
+[node name="WireController2" parent="." unique_id=1930750569 node_paths=PackedStringArray("SparkPath") instance=ExtResource("8_nbcmv")]
+SparkPath = NodePath("Line2D")
+move_speed = 300.0
+
+[node name="Line2D" type="Line2D" parent="WireController2" unique_id=532529081]
+points = PackedVector2Array(936, 600, 936, 648, 264, 648)
+
+[node name="BasicTilemap" parent="." unique_id=922358941 instance=ExtResource("4_bu08x")]
+tile_map_data = PackedByteArray("AAAAAAEAAQACAAUAAAAAAAIAAQACAAUAAAAAAAMAAQACAAUAAAAAAAQAAQACAAUAAAAAAAUAAQADAAYAAAABAAUAAQABAAQAAAACAAUAAQABAAQAAAADAAUAAQABAAQAAAAEAAUAAQABAAQAAAAFAAUAAQABAAQAAAAAAAAAAQADAAQAAAACAAAAAQABAAYAAAADAAAAAQABAAYAAAAEAAAAAQABAAYAAAAFAAAAAQABAAYAAAAGAAAAAQACAAYAAAABAAAAAQABAAYAAAAKAAAAAQAAAAYAAAALAAAAAQABAAYAAAAMAAEAAQAAAAYAAAAOAAIAAQAAAAYAAAAPAAMAAQAAAAYAAAAQAAUAAQAAAAYAAAANAAEAAQABAAYAAAAOAAEAAQAFAAQAAAAMAAAAAQAFAAQAAAAPAAIAAQAFAAQAAAAQAAQAAQAAAAUAAAAQAAMAAQAFAAQAAAARAAUAAQAFAAQAAAANAAAAAQABAAUAAAAOAAAAAQABAAUAAAAPAAAAAQABAAUAAAAQAAAAAQABAAUAAAAQAAEAAQABAAUAAAARAAEAAQABAAUAAAASAAEAAQABAAUAAAARAAAAAQABAAUAAAAPAAEAAQABAAUAAAATAAEAAQABAAUAAAAUAAEAAQABAAUAAAAVAAEAAQABAAUAAAAWAAEAAQABAAUAAAAVAAAAAQABAAUAAAAUAAAAAQABAAUAAAATAAAAAQABAAUAAAASAAAAAQABAAUAAAAWAAAAAQABAAUAAAAXAAAAAQABAAUAAAAXAAEAAQABAAUAAAAXAAIAAQABAAUAAAAXAAMAAQABAAUAAAAWAAIAAQABAAUAAAATAAIAAQABAAUAAAAUAAMAAQABAAUAAAAVAAMAAQABAAUAAAAWAAMAAQABAAUAAAAVAAIAAQABAAUAAAAUAAIAAQABAAUAAAATAAMAAQABAAUAAAASAAMAAQABAAUAAAASAAIAAQABAAUAAAARAAIAAQABAAUAAAAQAAIAAQABAAUAAAARAAMAAQABAAUAAAASAAQAAQABAAUAAAASAAUAAQABAAUAAAATAAUAAQABAAUAAAAUAAUAAQABAAUAAAATAAQAAQABAAUAAAARAAQAAQABAAUAAAAVAAUAAQABAAUAAAAWAAQAAQABAAUAAAAWAAUAAQABAAUAAAAUAAQAAQABAAUAAAAVAAQAAQABAAUAAAAXAAQAAQABAAUAAAAXAAUAAQABAAUAAAAHAAQAAQAAAAQAAAAIAAQAAQABAAQAAAAJAAQAAQACAAQAAAAGAAUAAQABAAQAAAAHAAUAAQAFAAYAAAAKAAUAAQACAAQAAAAJAAUAAQADAAYAAAAIAAUAAQABAAUAAAAAAAYAAQADAAQAAAAIAAYAAQABAAYAAAAJAAYAAQAFAAQAAAAKAAYAAQADAAYAAAARAAYAAQAAAAUAAAASAAYAAQABAAUAAAATAAYAAQABAAUAAAAUAAYAAQABAAUAAAAVAAYAAQABAAUAAAAWAAYAAQABAAUAAAAXAAYAAQABAAUAAAABAAYAAQABAAYAAAACAAYAAQABAAYAAAADAAYAAQABAAYAAAAEAAYAAQABAAYAAAAFAAYAAQABAAYAAAAGAAYAAQABAAYAAAAHAAYAAQABAAYAAAAAAAcAAQACAAUAAAAAAAgAAQACAAUAAAAAAAkAAQACAAUAAAAAAAoAAQADAAYAAAAAAAsAAQABAAUAAAAAAAwAAQABAAUAAAABAAoAAQABAAQAAAABAAsAAQABAAUAAAABAAwAAQABAAUAAAACAAoAAQABAAQAAAACAAsAAQABAAUAAAACAAwAAQABAAUAAAADAAoAAQABAAQAAAADAAsAAQABAAUAAAADAAwAAQABAAUAAAAEAAoAAQABAAQAAAAEAAsAAQABAAUAAAAEAAwAAQABAAUAAAAFAAsAAQADAAYAAAAFAAwAAQABAAUAAAAGAAwAAQADAAYAAAAJAAcAAQAAAAYAAAAKAAcAAQABAAYAAAALAAcAAQACAAYAAAARAAcAAQAAAAYAAAASAAcAAQABAAYAAAATAAcAAQABAAYAAAAUAAcAAQABAAYAAAAVAAcAAQAFAAQAAAAVAAgAAQAAAAUAAAAVAAkAAQAAAAUAAAAVAAoAAQAAAAUAAAAVAAsAAQAAAAUAAAAVAAwAAQAFAAYAAAAWAAcAAQABAAUAAAAWAAgAAQABAAUAAAAWAAkAAQABAAUAAAAWAAoAAQABAAUAAAAWAAsAAQABAAUAAAAWAAwAAQABAAUAAAAXAAcAAQABAAUAAAAXAAgAAQABAAUAAAAXAAkAAQABAAUAAAAXAAoAAQABAAUAAAAXAAsAAQABAAUAAAAXAAwAAQABAAUAAAAYAAgAAQABAAUAAAAYAAkAAQABAAUAAAAFAAoAAQACAAQAAAAGAAsAAQACAAQAAAAHAAwAAQABAAQAAAAIAAwAAQABAAQAAAAJAAwAAQABAAQAAAAKAAwAAQABAAQAAAALAAwAAQABAAQAAAAMAAwAAQABAAQAAAANAAwAAQABAAQAAAAOAAwAAQABAAQAAAAPAAwAAQABAAQAAAAQAAwAAQABAAQAAAARAAwAAQABAAQAAAASAAwAAQABAAQAAAATAAwAAQABAAQAAAAUAAwAAQABAAQAAAAYAAcAAQABAAUAAAAWAA0AAQABAAUAAAAVAA0AAQABAAUAAAAUAA0AAQABAAUAAAAXAA0AAQABAAUAAAATAA0AAQABAAUAAAASAA0AAQABAAUAAAARAA0AAQABAAUAAAAQAA0AAQABAAUAAAAPAA0AAQABAAUAAAAOAA0AAQABAAUAAAANAA0AAQABAAUAAAAMAA0AAQABAAUAAAALAA0AAQABAAUAAAAKAA0AAQABAAUAAAAJAA0AAQABAAUAAAAIAA0AAQABAAUAAAAHAA0AAQABAAUAAAAGAA0AAQABAAUAAAAFAA0AAQABAAUAAAAEAA0AAQABAAUAAAADAA0AAQABAAUAAAACAA0AAQABAAUAAAABAA0AAQABAAUAAAAAAA0AAQABAAUAAAD//w0AAQABAAUAAAALAAYAAQACAAQAAAA=")
+
+[node name="Player" parent="." unique_id=1947678060 instance=ExtResource("5_8vqsf")]
+position = Vector2(96, 192)
+
+[node name="SpikeTilemap" parent="." unique_id=1876759003 instance=ExtResource("6_jni50")]
+tile_map_data = PackedByteArray("AAAHAAMAAAAAAAAAAAAHAAAAAAABAAEAAAAIAAAAAAABAAEAAAAGAAQAAAAAAAAAAAAIAAMAAAAAAAAAAAAJAAMAAAAAAAAAAAAKAAQAAAAAAAAAAAAGAAEAAAABAAEAAAAJAAAAAAABAAEAAAAKAAEAAAABAAEAAAALAAEAAAABAAEAAAAMAAIAAAABAAEAAAANAAIAAAABAAEAAAAOAAMAAAABAAEAAAAPAAQAAAABAAAAAAALAAUAAAAAAAAAAAAPAAUAAAABAAAAAAAMAAYAAAAAAAEAAAAMAAcAAAAAAAEAAAAQAAYAAAABAAAAAAAQAAcAAAABAAAAAAAGAAoAAAAAAAEAAAAHAAsAAAAAAAEAAAAIAAcAAAABAAEAAAAIAAsAAAAAAAAAAAAJAAgAAAABAAEAAAAJAAsAAAAAAAAAAAAKAAgAAAABAAEAAAAKAAsAAAAAAAAAAAALAAgAAAABAAEAAAALAAsAAAAAAAAAAAAMAAsAAAAAAAAAAAANAAsAAAAAAAAAAAAOAAsAAAAAAAAAAAAPAAsAAAAAAAAAAAAQAAsAAAAAAAAAAAARAAgAAAABAAEAAAASAAgAAAABAAEAAAA=")
+
+[node name="WireTilemap" parent="." unique_id=1923152713 instance=ExtResource("7_npoen")]
+tile_map_data = PackedByteArray("AAAGAAAAAAABAAIAAAAFAAAAAAACAAEAAAAEAAAAAAACAAEAAAADAAAAAAACAAEAAAACAAAAAAACAAEAAAABAAAAAAACAAEAAAAAAAAAAAAAAAAAAAAAAAEAAAACAAAAAAAAAAIAAAACAAAAAAAAAAMAAAACAAAAAAAAAAQAAAACAAAAAAAAAAUAAAAAAAEAAAABAAUAAAACAAEAAAACAAUAAAACAAEAAAADAAUAAAACAAEAAAAEAAUAAAACAAEAAAAFAAUAAAACAAEAAAAGAAUAAAACAAEAAAAHAAUAAAACAAEAAAAIAAUAAAABAAAAAAAIAAYAAAABAAEAAAAHAAYAAAACAAEAAAAGAAYAAAACAAEAAAAFAAYAAAACAAEAAAAEAAYAAAADAAEAAAADAAYAAAAAAAMAAAATAAwAAAABAAMAAAATAA0AAAABAAEAAAASAA0AAAACAAEAAAARAA0AAAACAAEAAAAQAA0AAAADAAEAAAAPAA0AAAACAAEAAAAOAA0AAAACAAEAAAANAA0AAAACAAEAAAAMAA0AAAACAAEAAAALAA0AAAACAAEAAAAKAA0AAAACAAEAAAAJAA0AAAACAAEAAAAIAA0AAAACAAEAAAAHAA0AAAACAAEAAAAGAA0AAAACAAEAAAAFAA0AAAAAAAMAAAA=")
+
+[node name="Button" parent="." unique_id=1493427791 node_paths=PackedStringArray("wire") instance=ExtResource("8_04af2")]
+position = Vector2(912, 576)
+wire = NodePath("../WireController2")
+
+[node name="FanController" parent="." unique_id=460889247 node_paths=PackedStringArray("wind", "fans", "fan_particles") instance=ExtResource("10_jni50")]
+position = Vector2(768, 672)
+enabled = false
+wind = NodePath("Wind")
+fans = [NodePath("FanBlock6"), NodePath("FanBlock"), NodePath("FanBlock2"), NodePath("FanBlock3"), NodePath("FanBlock4"), NodePath("FanBlock5")]
+timer_length = 10.0
+fan_particles = [NodePath("Particle_wind"), NodePath("Particle_wind2"), NodePath("Particle_wind3"), NodePath("Particle_wind4"), NodePath("Particle_wind5"), NodePath("Particle_wind6")]
+
+[node name="Wind" parent="FanController" unique_id=886117404 instance=ExtResource("11_npoen")]
+position = Vector2(24, 28)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FanController/Wind" unique_id=2033328977]
+position = Vector2(-264, -412)
+shape = SubResource("RectangleShape2D_tcnmj")
+
+[node name="FanBlock6" parent="FanController" unique_id=1906170809 instance=ExtResource("12_81tvj")]
+position = Vector2(-48, -48)
+
+[node name="FanBlock" parent="FanController" unique_id=1046587946 instance=ExtResource("12_81tvj")]
+position = Vector2(-144, -48)
+
+[node name="FanBlock2" parent="FanController" unique_id=447416274 instance=ExtResource("12_81tvj")]
+position = Vector2(-240, -48)
+
+[node name="FanBlock3" parent="FanController" unique_id=131904006 instance=ExtResource("12_81tvj")]
+position = Vector2(-336, -48)
+
+[node name="FanBlock4" parent="FanController" unique_id=1328721142 instance=ExtResource("12_81tvj")]
+position = Vector2(-432, -48)
+
+[node name="FanBlock5" parent="FanController" unique_id=1658580527 instance=ExtResource("12_81tvj")]
+position = Vector2(-528, -48)
+
+[node name="Particle_wind" parent="FanController" unique_id=320778406 instance=ExtResource("13_npoen")]
+position = Vector2(0, -72)
+
+[node name="Particle_wind2" parent="FanController" unique_id=982796461 instance=ExtResource("13_npoen")]
+position = Vector2(-96, -72)
+
+[node name="Particle_wind3" parent="FanController" unique_id=553131847 instance=ExtResource("13_npoen")]
+position = Vector2(-192, -72)
+
+[node name="Particle_wind4" parent="FanController" unique_id=1533622609 instance=ExtResource("13_npoen")]
+position = Vector2(-288, -72)
+
+[node name="Particle_wind5" parent="FanController" unique_id=1017840508 instance=ExtResource("13_npoen")]
+position = Vector2(-384, -72)
+
+[node name="Particle_wind6" parent="FanController" unique_id=183607051 instance=ExtResource("13_npoen")]
+position = Vector2(-480, -72)
+
+[node name="WindyABanksBackgroundCosmeticSprite" type="Sprite2D" parent="." unique_id=1387597937]
+position = Vector2(936, 312)
+scale = Vector2(2, 2)
+texture = ExtResource("14_81tvj")
