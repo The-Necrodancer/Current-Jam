@@ -28,6 +28,10 @@ func load_main_menu():
 	
 	var node = MainMenuScene.instantiate()
 	
+	# Stops the Level Music
+	if LevelMusic.playing:
+		LevelMusic.stop()
+	
 	# Plays the Main Menu Music
 	if not MainMenuMusic.playing:
 		print("Playing Main Menu Music")
@@ -41,6 +45,10 @@ func load_main_menu():
 func load_credits_scene():
 	print("Loading credits scene...")
 	remove_current_scene()
+	
+	# Stops the Level Music
+	if LevelMusic.playing:
+		LevelMusic.stop()
 	
 	var node = CreditsScene.instantiate()
 	node.connect("menu", load_main_menu)
@@ -56,7 +64,10 @@ func load_scene(index:int = 0, packedScene:PackedScene = null):
 	# Stops the main menu music
 	if MainMenuMusic.playing:
 		MainMenuMusic.stop()
+		
 	remove_current_scene()
+	
+	# Plays the Level Music
 	if not LevelMusic.playing:
 		LevelMusic.play()
 	
