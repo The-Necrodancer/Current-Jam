@@ -7,6 +7,9 @@ class_name GameManager
 @export var CreditsScene: PackedScene # The credits Scene
 @export var levels : Array[PackedScene] 
 
+@onready var MainMenuMusic : AudioStreamPlayer2D = $MainMenuASP2D
+# @onready var LevelMusic : AudioStreamPlayer2D = $LevelASP2D
+
 var cur_level_index : int = 0 # this keeps track of the current level in the list
 
 func _init() -> void:
@@ -14,12 +17,20 @@ func _init() -> void:
 
 func remove_current_scene():
 	for c in self.get_children():
+		if c == MainMenuMusic:
+			continue
 		c.queue_free()
 
 func load_main_menu():
 	remove_current_scene()
 	
 	var node = MainMenuScene.instantiate()
+	
+	# Plays the Main Menu Music
+	if not MainMenuMusic.playing:
+		print("Playing Main Menu Music")
+		MainMenuMusic.play()
+		
 	node.connect("start", load_scene)
 	node.connect("credits", load_credits_scene)
 	self.add_child(node)

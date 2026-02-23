@@ -5,6 +5,9 @@ class_name Player
 @export var GroundCheck : ShapeCast2D
 @export var anim : AnimationPlayer
 @export var sprite : Sprite2D
+@onready var jumpsfx : AudioStreamPlayer2D = $AudioStreamPlayer2D
+@onready var parachutesfx : AudioStreamPlayer2D = $ParachuteDeployASP
+
 
 var move_speed = 12500
 var move_speed_ceil = 500
@@ -61,6 +64,8 @@ func _physics_process(delta: float) -> void:
 		if is_hovering:
 			if anim.current_animation != "glide_start" and anim.current_animation != "glide":
 				anim.play("glide_start")
+				# Plays the Parachute Deployment SFX
+				parachutesfx.play()
 		else:
 			if(velocity.y < 0):
 				anim.play("jump_asc")
@@ -112,6 +117,8 @@ func check_grounded():
 	grounded = g
 
 func jump():
+	# Plays the jumping sfx
+	jumpsfx.play()
 	if grounded || timer_coyote > 0:
 		velocity.y = -jump_vel #y inverted in godot
 		timer_jump_buf = 0
