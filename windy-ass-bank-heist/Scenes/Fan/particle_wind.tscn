@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cjkwboeocvoip"]
+
+[ext_resource type="Texture2D" uid="uid://dsxdxombur1cy" path="res://Sprites/wind_dust.png" id="1_n5oxx"]
+
+[node name="Particle_wind" type="CPUParticles2D" unique_id=320778406]
+z_index = -1
+amount = 20
+texture = ExtResource("1_n5oxx")
+lifetime = 5.0
+emission_shape = 3
+emission_rect_extents = Vector2(48, 20)
+direction = Vector2(0, -1)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 200.0
+initial_velocity_max = 200.0
+radial_accel_min = -1.0
+radial_accel_max = 1.0
+scale_amount_min = 3.0
+scale_amount_max = 3.0

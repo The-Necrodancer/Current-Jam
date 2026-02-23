@@ -1,0 +1,116 @@
+[gd_scene format=4 uid="uid://cf32hrhj4d1af"]
+
+[ext_resource type="Script" uid="uid://6t8efmx5m2rt" path="res://Scripts/level.gd" id="1_i4hbv"]
+[ext_resource type="PackedScene" uid="uid://3aebq2xa05pm" path="res://Scenes/gem.tscn" id="2_h0uxt"]
+[ext_resource type="PackedScene" uid="uid://cfne1c7isnf7l" path="res://Scenes/door.tscn" id="3_keyqw"]
+[ext_resource type="PackedScene" uid="uid://b4hq18ry2n160" path="res://Tilemap Stuff/BasicTilemap.tscn" id="4_gsxik"]
+[ext_resource type="PackedScene" uid="uid://dectjccxyaw1r" path="res://Scenes/player.tscn" id="5_3asqb"]
+[ext_resource type="PackedScene" uid="uid://omkxcg0alll2" path="res://Scenes/Fan/FanController.tscn" id="5_slbhm"]
+[ext_resource type="PackedScene" uid="uid://woh4wy1xm1d3" path="res://Scenes/Fan/fan_block.tscn" id="6_i5g5g"]
+[ext_resource type="PackedScene" uid="uid://nshtepqpar2j" path="res://Tilemap Stuff/SpikeTilemap.tscn" id="6_slbhm"]
+[ext_resource type="PackedScene" uid="uid://cxb0nu6252c2u" path="res://Scenes/wind.tscn" id="7_3osng"]
+[ext_resource type="PackedScene" uid="uid://c4512pji0h4i4" path="res://Tilemap Stuff/WireTilemap.tscn" id="7_i5g5g"]
+[ext_resource type="PackedScene" uid="uid://brnuwwb6omkhj" path="res://Scenes/button.tscn" id="8_eb4ip"]
+[ext_resource type="PackedScene" uid="uid://bhc828t5ibioa" path="res://Scenes/WireController.tscn" id="9_ecora"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xpmn3"]
+size = Vector2(96, 528)
+
+[node name="Level4" type="Node2D" unique_id=1257747170 node_paths=PackedStringArray("player", "end_door", "end_gem")]
+script = ExtResource("1_i4hbv")
+player = NodePath("Player")
+end_door = NodePath("Door")
+end_gem = NodePath("Gem")
+metadata/_custom_type_script = "uid://6t8efmx5m2rt"
+
+[node name="Gem" parent="." unique_id=1617286755 instance=ExtResource("2_h0uxt")]
+position = Vector2(144, 192)
+
+[node name="Door" parent="." unique_id=890636085 instance=ExtResource("3_keyqw")]
+position = Vector2(240, 192)
+
+[node name="Button" parent="." unique_id=1493427791 node_paths=PackedStringArray("wire") instance=ExtResource("8_eb4ip")]
+position = Vector2(48, 624)
+wire = NodePath("../WireController")
+
+[node name="WireController" parent="." unique_id=9856284 node_paths=PackedStringArray("SparkPath") instance=ExtResource("9_ecora")]
+SparkPath = NodePath("Line2D")
+move_speed = 400.0
+
+[node name="Line2D" type="Line2D" parent="WireController" unique_id=1221316304]
+points = PackedVector2Array(72, 648, 456, 648, 456, 408, 696, 408, 696, 552, 984, 552, 984, 504)
+
+[node name="WireController2" parent="." unique_id=1457136505 node_paths=PackedStringArray("SparkPath") instance=ExtResource("9_ecora")]
+SparkPath = NodePath("Line2D")
+move_speed = 400.0
+
+[node name="Line2D" type="Line2D" parent="WireController2" unique_id=1055288598]
+points = PackedVector2Array(984, 504, 984, 552, 696, 552, 696, 408, 456, 408, 456, 648, 72, 648)
+
+[node name="WireController3" parent="." unique_id=23210572 node_paths=PackedStringArray("SparkPath") instance=ExtResource("9_ecora")]
+SparkPath = NodePath("Line2D")
+auto_start = true
+
+[node name="Line2D" type="Line2D" parent="WireController3" unique_id=2046533374]
+points = PackedVector2Array(24, 408, 24, 360, 264, 360, 264, 312, 72, 312, 72, 264, 264, 264, 264, 216, 24, 216, 24, 24, 312, 24)
+
+[node name="BasicTilemap" parent="." unique_id=922358941 instance=ExtResource("4_gsxik")]
+tile_map_data = PackedByteArray("AAAAAAAAAQABAAYAAAABAAAAAQABAAYAAAACAAAAAQABAAYAAAADAAAAAQABAAYAAAAEAAAAAQABAAYAAAAFAAAAAQABAAYAAAAGAAAAAQABAAYAAAAHAAAAAQABAAYAAAAIAAAAAQABAAYAAAAJAAAAAQAFAAQAAAAKAAAAAQABAAUAAAALAAAAAQABAAUAAAAMAAAAAQABAAUAAAANAAAAAQABAAUAAAAOAAAAAQADAAQAAAAPAAAAAQABAAYAAAAQAAAAAQABAAYAAAARAAAAAQABAAYAAAASAAAAAQABAAYAAAATAAAAAQABAAYAAAAUAAAAAQABAAYAAAAVAAAAAQABAAUAAAAWAAAAAQABAAUAAAAXAAAAAQABAAUAAAAAAAEAAQACAAUAAAAAAAIAAQACAAUAAAAAAAMAAQACAAUAAAAAAAQAAQACAAUAAAABAAQAAQABAAQAAAACAAQAAQABAAQAAAADAAQAAQABAAQAAAAEAAQAAQABAAQAAAAFAAQAAQACAAQAAAAXAAEAAQABAAUAAAAXAAIAAQABAAUAAAAXAAMAAQABAAUAAAAXAAQAAQABAAUAAAAXAAUAAQABAAUAAAAXAAYAAQABAAUAAAAXAAcAAQABAAUAAAAXAAgAAQABAAUAAAAXAAkAAQABAAUAAAAXAAoAAQABAAUAAAAXAAsAAQABAAUAAAAXAAwAAQABAAUAAAAXAA0AAQABAAUAAAAWAA0AAQABAAUAAAAVAA0AAQABAAUAAAAUAA0AAQABAAUAAAATAA0AAQABAAUAAAASAA0AAQABAAUAAAARAA0AAQABAAUAAAAQAA0AAQABAAUAAAAPAA0AAQABAAUAAAAOAA0AAQABAAUAAAANAA0AAQABAAUAAAAMAA0AAQABAAUAAAALAA0AAQABAAUAAAAKAA0AAQABAAUAAAAJAA0AAQAFAAYAAAAIAA0AAQABAAQAAAAHAA0AAQABAAQAAAAGAA0AAQABAAQAAAAFAA0AAQABAAQAAAAEAA0AAQABAAQAAAADAA0AAQABAAQAAAACAA0AAQABAAQAAAABAA0AAQABAAQAAAAAAA0AAQABAAQAAAAAAAUAAQACAAUAAAAAAAYAAQACAAUAAAAAAAcAAQACAAUAAAAAAAgAAQACAAUAAAAAAAkAAQACAAUAAAAAAAoAAQACAAUAAAAAAAsAAQACAAUAAAAAAAwAAQACAAUAAAAJAAwAAQAAAAUAAAAJAAsAAQAAAAUAAAAJAAoAAQAAAAUAAAAJAAkAAQAAAAUAAAAJAAgAAQAAAAUAAAAFAAUAAQACAAUAAAAFAAYAAQACAAUAAAAFAAcAAQACAAYAAAAEAAcAAQABAAYAAAADAAcAAQABAAYAAAACAAcAAQABAAYAAAABAAcAAQABAAYAAAABAAYAAQABAAUAAAABAAUAAQABAAUAAAACAAUAAQABAAUAAAADAAUAAQABAAUAAAADAAYAAQABAAUAAAACAAYAAQABAAUAAAAEAAUAAQABAAUAAAAEAAYAAQABAAUAAAAMAAgAAQABAAUAAAALAAgAAQABAAUAAAAKAAgAAQABAAUAAAAKAAkAAQABAAUAAAAKAAoAAQABAAUAAAALAAoAAQABAAUAAAALAAsAAQABAAUAAAAMAAsAAQABAAUAAAANAAoAAQABAAUAAAAOAAkAAQACAAUAAAAOAAgAAQACAAUAAAANAAgAAQABAAUAAAAMAAkAAQABAAUAAAAMAAoAAQABAAUAAAANAAkAAQABAAUAAAALAAkAAQABAAUAAAAKAAsAAQABAAUAAAAKAAwAAQABAAUAAAALAAwAAQABAAUAAAAMAAwAAQABAAUAAAANAAwAAQABAAUAAAAOAAsAAQABAAUAAAAOAAoAAQADAAYAAAANAAsAAQABAAUAAAAOAAwAAQABAAUAAAAJAAcAAQAAAAQAAAAKAAcAAQABAAQAAAALAAcAAQABAAQAAAAMAAcAAQABAAQAAAANAAcAAQABAAQAAAAOAAcAAQACAAQAAAAJAAEAAQAAAAYAAAAKAAEAAQABAAYAAAALAAEAAQABAAYAAAAMAAEAAQABAAYAAAANAAEAAQABAAYAAAAOAAEAAQACAAYAAAAPAAoAAQABAAQAAAAQAAoAAQABAAQAAAARAAoAAQABAAQAAAASAAoAAQABAAQAAAATAAoAAQABAAQAAAAUAAoAAQABAAQAAAAVAAoAAQAAAAUAAAAWAAoAAQABAAUAAAASAAsAAQABAAUAAAARAAsAAQABAAUAAAAQAAsAAQABAAUAAAAPAAsAAQABAAUAAAAPAAwAAQABAAUAAAASAAwAAQABAAUAAAARAAwAAQABAAUAAAAQAAwAAQABAAUAAAATAAwAAQABAAUAAAAUAAwAAQABAAUAAAAVAAwAAQABAAUAAAAUAAsAAQABAAUAAAATAAsAAQABAAUAAAAVAAsAAQABAAUAAAAWAAsAAQABAAUAAAAWAAwAAQABAAUAAAAVAAEAAQAAAAUAAAAVAAIAAQAAAAUAAAAVAAMAAQAAAAUAAAAVAAQAAQAAAAUAAAAVAAUAAQAAAAUAAAAVAAYAAQAAAAUAAAAVAAcAAQAAAAUAAAAVAAgAAQAAAAUAAAAVAAkAAQAAAAUAAAAWAAkAAQABAAUAAAAWAAgAAQABAAUAAAAWAAcAAQABAAUAAAAWAAYAAQABAAUAAAAWAAUAAQABAAUAAAAWAAQAAQABAAUAAAAWAAMAAQABAAUAAAAWAAIAAQABAAUAAAAWAAEAAQABAAUAAAA=")
+
+[node name="FanController3" parent="." unique_id=460889247 node_paths=PackedStringArray("wind", "fans") instance=ExtResource("5_slbhm")]
+position = Vector2(720, 576)
+wind = NodePath("Wind")
+fans = [NodePath("FanBlock")]
+timer_length = 1.0
+
+[node name="FanBlock" parent="FanController3" unique_id=1906170809 instance=ExtResource("6_i5g5g")]
+position = Vector2(0, -48)
+
+[node name="Wind" parent="FanController3" unique_id=886117404 instance=ExtResource("7_3osng")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FanController3/Wind" unique_id=223165695]
+position = Vector2(48, -360)
+shape = SubResource("RectangleShape2D_xpmn3")
+
+[node name="FanController2" parent="." unique_id=40625780 node_paths=PackedStringArray("wind", "fans") instance=ExtResource("5_slbhm")]
+position = Vector2(528, 432)
+wind = NodePath("Wind")
+fans = [NodePath("FanBlock")]
+timer_length = 0.9
+
+[node name="FanBlock" parent="FanController2" unique_id=354594687 instance=ExtResource("6_i5g5g")]
+position = Vector2(0, -48)
+
+[node name="Wind" parent="FanController2" unique_id=73996685 instance=ExtResource("7_3osng")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FanController2/Wind" unique_id=1029662828]
+position = Vector2(48, -360)
+shape = SubResource("RectangleShape2D_xpmn3")
+
+[node name="FanController" parent="." unique_id=106258582 node_paths=PackedStringArray("wind", "fans") instance=ExtResource("5_slbhm")]
+position = Vector2(336, 672)
+wind = NodePath("Wind")
+fans = [NodePath("FanBlock")]
+timer_length = 0.9
+
+[node name="FanBlock" parent="FanController" unique_id=357664970 instance=ExtResource("6_i5g5g")]
+position = Vector2(0, -48)
+
+[node name="Wind" parent="FanController" unique_id=792228685 instance=ExtResource("7_3osng")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FanController/Wind" unique_id=1158128853]
+position = Vector2(48, -360)
+shape = SubResource("RectangleShape2D_xpmn3")
+
+[node name="Player" parent="." unique_id=1947678060 instance=ExtResource("5_3asqb")]
+position = Vector2(144, 624)
+
+[node name="SpikeTilemap" parent="." unique_id=1876759003 instance=ExtResource("6_slbhm")]
+tile_map_data = PackedByteArray("AAAJAAYAAAAAAAAAAAAKAAYAAAAAAAAAAAALAAYAAAAAAAAAAAAMAAYAAAAAAAAAAAANAAYAAAAAAAAAAAAOAAYAAAAAAAAAAAAJAAIAAAABAAEAAAAKAAIAAAABAAEAAAALAAIAAAABAAEAAAAMAAIAAAABAAEAAAANAAIAAAABAAEAAAAOAAIAAAABAAEAAAA=")
+
+[node name="WireTilemap" parent="." unique_id=1923152713 instance=ExtResource("7_i5g5g")]
+tile_map_data = PackedByteArray("AAACAA0AAAACAAEAAAADAA0AAAACAAEAAAAEAA0AAAACAAEAAAAFAA0AAAACAAEAAAAGAA0AAAACAAEAAAAHAA0AAAADAAEAAAAIAA0AAAACAAEAAAABAA0AAAAAAAMAAAAJAA0AAAABAAEAAAAJAAwAAAACAAAAAAAJAAsAAAACAAAAAAAJAAoAAAACAAAAAAAJAAkAAAACAAAAAAAJAAgAAAAAAAAAAAAKAAgAAAACAAEAAAALAAgAAAADAAEAAAAMAAgAAAACAAEAAAANAAgAAAACAAEAAAAOAAgAAAABAAAAAAAOAAkAAAACAAAAAAAOAAoAAAACAAAAAAAOAAsAAAAAAAEAAAAPAAsAAAADAAEAAAAQAAsAAAACAAEAAAARAAsAAAACAAEAAAASAAsAAAACAAEAAAATAAsAAAACAAEAAAAUAAsAAAABAAEAAAAUAAoAAAABAAMAAAAAAAcAAAAAAAAAAAABAAcAAAACAAEAAAACAAcAAAACAAEAAAADAAcAAAACAAEAAAAEAAcAAAACAAEAAAAFAAcAAAABAAEAAAAFAAYAAAABAAAAAAAEAAYAAAACAAEAAAADAAYAAAACAAEAAAACAAYAAAACAAEAAAABAAYAAAAAAAEAAAABAAUAAAAAAAAAAAACAAUAAAACAAEAAAADAAUAAAACAAEAAAAEAAUAAAACAAEAAAAFAAUAAAABAAEAAAAFAAQAAAABAAAAAAAEAAQAAAACAAEAAAADAAQAAAACAAEAAAACAAQAAAACAAEAAAABAAQAAAACAAEAAAAAAAQAAAAAAAEAAAAAAAMAAAACAAAAAAAAAAIAAAACAAAAAAAAAAEAAAACAAAAAAAAAAAAAAAAAAAAAAABAAAAAAACAAEAAAACAAAAAAACAAEAAAADAAAAAAACAAEAAAAEAAAAAAACAAEAAAAFAAAAAAADAAEAAAAGAAAAAAABAAIAAAAAAAgAAAAAAAIAAAA=")
+
+[node name="Button2" parent="." unique_id=1649985631 node_paths=PackedStringArray("wire") instance=ExtResource("8_eb4ip")]
+position = Vector2(960, 480)
+wire = NodePath("../WireController2")
