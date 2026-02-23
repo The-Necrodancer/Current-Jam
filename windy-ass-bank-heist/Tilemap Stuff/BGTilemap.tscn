@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cfk2jwypf1egq"]
+
+[ext_resource type="Texture2D" uid="uid://cnj4yrhqsdb6o" path="res://Sprites/bg_wall_tileset.png" id="1_lsgpl"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4ulab"]
+texture = ExtResource("1_lsgpl")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_7u3v4"]
+sources/0 = SubResource("TileSetAtlasSource_4ulab")
+
+[node name="BgTilemap" type="TileMapLayer" unique_id=975572312]
+z_index = -10
+scale = Vector2(3, 3)
+tile_set = SubResource("TileSet_7u3v4")
