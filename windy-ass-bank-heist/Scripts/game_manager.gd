@@ -8,7 +8,7 @@ class_name GameManager
 @export var levels : Array[PackedScene] 
 
 @onready var MainMenuMusic : AudioStreamPlayer2D = $MainMenuASP2D
-# @onready var LevelMusic : AudioStreamPlayer2D = $LevelASP2D
+@onready var LevelMusic : AudioStreamPlayer2D = $LevelASP2D
 
 var cur_level_index : int = 0 # this keeps track of the current level in the list
 
@@ -18,6 +18,8 @@ func _init() -> void:
 func remove_current_scene():
 	for c in self.get_children():
 		if c == MainMenuMusic:
+			continue
+		if c == LevelMusic:
 			continue
 		c.queue_free()
 
@@ -51,7 +53,12 @@ func quit_game():
 	get_tree().quit()
 
 func load_scene(index:int = 0, packedScene:PackedScene = null):
+	# Stops the main menu music
+	if MainMenuMusic.playing:
+		MainMenuMusic.stop()
 	remove_current_scene()
+	if not LevelMusic.playing:
+		LevelMusic.play()
 	
 	var cur_level
 	if packedScene == null:
