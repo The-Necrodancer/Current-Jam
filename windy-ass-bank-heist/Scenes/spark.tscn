@@ -1,18 +1,63 @@
 [gd_scene format=3 uid="uid://c80f0jpperiy7"]
 
-[ext_resource type="Texture2D" uid="uid://bl1b7576mjpom" path="res://Assets/icon.svg" id="1_ygcql"]
+[ext_resource type="Script" uid="uid://duq0rcchwvvan" path="res://Scripts/spark.gd" id="1_y6piv"]
+[ext_resource type="Texture2D" uid="uid://ddskn46f1mvk5" path="res://Sprites/spark.png" id="1_ygcql"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ygcql"]
 size = Vector2(10, 10)
 
-[node name="Spark" type="Area2D" unique_id=1090099148]
+[sub_resource type="Animation" id="Animation_ygcql"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_y6piv"]
+resource_name = "default"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wd3er"]
+_data = {
+&"RESET": SubResource("Animation_ygcql"),
+&"default": SubResource("Animation_y6piv")
+}
+
+[node name="Spark" type="Area2D" unique_id=1090099148 node_paths=PackedStringArray("anim")]
 collision_layer = 4
 collision_mask = 4
+script = ExtResource("1_y6piv")
+anim = NodePath("AnimationPlayer")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1390575545]
 z_index = 2
-scale = Vector2(0.2, 0.2)
+scale = Vector2(3, 3)
 texture = ExtResource("1_ygcql")
+hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=970237432]
 shape = SubResource("RectangleShape2D_ygcql")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2002150423]
+libraries/ = SubResource("AnimationLibrary_wd3er")
