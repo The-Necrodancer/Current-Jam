@@ -17,7 +17,7 @@ func _init() -> void:
 
 func remove_current_scene():
 	for c in self.get_children():
-		if c == MainMenuMusic:
+		if c == MainMenuMusic or c is Sprite2D:
 			continue
 		if c == LevelMusic:
 			continue
