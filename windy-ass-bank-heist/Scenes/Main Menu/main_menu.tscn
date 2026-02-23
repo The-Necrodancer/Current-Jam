@@ -66,7 +66,7 @@ offset_right = 760.0
 offset_bottom = 185.0
 theme_override_fonts/normal_font = ExtResource("1_48xlc")
 theme_override_font_sizes/normal_font_size = 32
-text = "[Insert Title Here]"
+text = "Crooked Currents"
 horizontal_alignment = 1
 vertical_alignment = 1
 
