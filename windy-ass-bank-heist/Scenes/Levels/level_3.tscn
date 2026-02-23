@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://woh4wy1xm1d3" path="res://Scenes/Fan/fan_block.tscn" id="7_dl55b"]
 [ext_resource type="PackedScene" uid="uid://brnuwwb6omkhj" path="res://Scenes/button.tscn" id="11_sy7oa"]
 [ext_resource type="PackedScene" uid="uid://cjkwboeocvoip" path="res://Scenes/Fan/particle_wind.tscn" id="12_sy7oa"]
+[ext_resource type="Texture2D" uid="uid://cdwfca04c7bsd" path="res://Sprites/windy_a_banks_background_cosmetic_sprite.png" id="13_md4x4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ahh4"]
 size = Vector2(96, 576)
@@ -75,3 +76,8 @@ wire = NodePath("../WireController")
 
 [node name="Particle_wind" parent="." unique_id=320778406 instance=ExtResource("12_sy7oa")]
 position = Vector2(480, 560)
+
+[node name="WindyABanksBackgroundCosmeticSprite" type="Sprite2D" parent="." unique_id=334053807]
+position = Vector2(216, 312)
+scale = Vector2(2, 2)
+texture = ExtResource("13_md4x4")

@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://c4512pji0h4i4" path="res://Tilemap Stuff/WireTilemap.tscn" id="7_i5g5g"]
 [ext_resource type="PackedScene" uid="uid://brnuwwb6omkhj" path="res://Scenes/button.tscn" id="8_eb4ip"]
 [ext_resource type="PackedScene" uid="uid://bhc828t5ibioa" path="res://Scenes/WireController.tscn" id="9_ecora"]
+[ext_resource type="Texture2D" uid="uid://cdwfca04c7bsd" path="res://Sprites/windy_a_banks_background_cosmetic_sprite.png" id="13_i5g5g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xpmn3"]
 size = Vector2(96, 528)
@@ -114,3 +115,8 @@ tile_map_data = PackedByteArray("AAACAA0AAAACAAEAAAADAA0AAAACAAEAAAAEAA0AAAACAAE
 [node name="Button2" parent="." unique_id=1649985631 node_paths=PackedStringArray("wire") instance=ExtResource("8_eb4ip")]
 position = Vector2(960, 480)
 wire = NodePath("../WireController2")
+
+[node name="WindyABanksBackgroundCosmeticSprite" type="Sprite2D" parent="." unique_id=949825132]
+position = Vector2(576, 504)
+scale = Vector2(2, 2)
+texture = ExtResource("13_i5g5g")

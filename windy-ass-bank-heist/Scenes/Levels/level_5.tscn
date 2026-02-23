@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cxb0nu6252c2u" path="res://Scenes/wind.tscn" id="8_evokg"]
 [ext_resource type="PackedScene" uid="uid://woh4wy1xm1d3" path="res://Scenes/Fan/fan_block.tscn" id="10_3koi7"]
 [ext_resource type="PackedScene" uid="uid://cjkwboeocvoip" path="res://Scenes/Fan/particle_wind.tscn" id="11_evokg"]
+[ext_resource type="Texture2D" uid="uid://cdwfca04c7bsd" path="res://Sprites/windy_a_banks_background_cosmetic_sprite.png" id="12_3koi7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_20kd1"]
 size = Vector2(864, 586)
@@ -108,3 +109,8 @@ position = Vector2(144, -360)
 
 [node name="Particle_wind9" parent="fans" unique_id=2012387230 instance=ExtResource("11_evokg")]
 position = Vector2(240, -360)
+
+[node name="WindyABanksBackgroundCosmeticSprite" type="Sprite2D" parent="fans" unique_id=1873562264]
+position = Vector2(-96, -552)
+scale = Vector2(2, 2)
+texture = ExtResource("12_3koi7")

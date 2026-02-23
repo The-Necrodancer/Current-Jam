@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://cxse4gl3gprcj"]
 
-[ext_resource type="Script" path="res://Scripts/level.gd" id="1_055b2"]
+[ext_resource type="Script" uid="uid://6t8efmx5m2rt" path="res://Scripts/level.gd" id="1_055b2"]
 [ext_resource type="PackedScene" uid="uid://c4512pji0h4i4" path="res://Tilemap Stuff/WireTilemap.tscn" id="2_2mgoq"]
 [ext_resource type="PackedScene" uid="uid://b4hq18ry2n160" path="res://Tilemap Stuff/BasicTilemap.tscn" id="3_uhnj4"]
 [ext_resource type="PackedScene" uid="uid://nshtepqpar2j" path="res://Tilemap Stuff/SpikeTilemap.tscn" id="4_42uki"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://woh4wy1xm1d3" path="res://Scenes/Fan/fan_block.tscn" id="9_1jlnc"]
 [ext_resource type="PackedScene" uid="uid://bhc828t5ibioa" path="res://Scenes/WireController.tscn" id="9_blpqv"]
 [ext_resource type="PackedScene" uid="uid://cjkwboeocvoip" path="res://Scenes/Fan/particle_wind.tscn" id="11_u40f0"]
+[ext_resource type="Texture2D" uid="uid://cdwfca04c7bsd" path="res://Sprites/windy_a_banks_background_cosmetic_sprite.png" id="12_0x4y1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u40f0"]
 size = Vector2(384, 528)
@@ -82,3 +83,8 @@ lifetime = 3.0
 [node name="Particle_wind4" parent="." unique_id=311056047 instance=ExtResource("11_u40f0")]
 position = Vector2(864, 656)
 lifetime = 3.0
+
+[node name="WindyABanksBackgroundCosmeticSprite" type="Sprite2D" parent="." unique_id=1767209410]
+position = Vector2(576, 312)
+scale = Vector2(2, 2)
+texture = ExtResource("12_0x4y1")
