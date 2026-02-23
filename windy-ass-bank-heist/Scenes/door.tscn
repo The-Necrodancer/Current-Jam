@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://58cxp2i51qwd" path="res://Scripts/door.gd" id="1_p0e35"]
 [ext_resource type="Texture2D" uid="uid://b3agobattbxm0" path="res://Sprites/BasicBlockDemo.png" id="2_p0e35"]
+[ext_resource type="AudioStream" uid="uid://c8acxba7vi4yp" path="res://Sfx/spongebob-boowomp.mp3" id="3_fahql"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p0e35"]
 size = Vector2(48, 144)
@@ -46,6 +47,18 @@ tracks/2/keys = {
 "method": &"signal_reset"
 }]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_fahql"]
 length = 0.001
@@ -68,6 +81,18 @@ tracks/1/path = NodePath("Sprite2D:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -108,3 +133,6 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1233464187]
 position = Vector2(24, -168)
 shape = SubResource("RectangleShape2D_fahql")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=630720625]
+stream = ExtResource("3_fahql")
