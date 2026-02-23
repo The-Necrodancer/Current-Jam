@@ -24,7 +24,7 @@ func reset_on_death():
 	reset_level()
 
 func reset_level():
-	gameManager.reload_current_scene()
+		gameManager.reload_current_scene()
 
 func complete_level():
 	gameManager.load_next_scene()
