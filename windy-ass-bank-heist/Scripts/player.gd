@@ -79,9 +79,11 @@ func _physics_process(delta: float) -> void:
 		velocity *= ground_decel
 	else:
 		if(up_draft and is_hovering):
-			velocity.y = up_draft_vel
+			velocity.y = clampf(velocity.y + up_draft_vel, up_draft_vel,1000)
 		elif(is_hovering):
-			velocity *= Vector2(air_decel, hover_decel) 
+			velocity = Vector2(velocity.x * air_decel, velocity.y * hover_decel) 
+		elif(up_draft):
+			velocity.y += up_draft_vel * 0.5 * delta
 		else:
 			velocity *= air_decel
 

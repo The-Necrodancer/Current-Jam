@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cfne1c7isnf7l"]
 
 [ext_resource type="Script" uid="uid://58cxp2i51qwd" path="res://Scripts/door.gd" id="1_p0e35"]
-[ext_resource type="Texture2D" uid="uid://b3agobattbxm0" path="res://Sprites/BasicBlockDemo.png" id="2_p0e35"]
+[ext_resource type="Texture2D" uid="uid://bs4mhxhhjkv3o" path="res://Sprites/door.png" id="2_fahql"]
 [ext_resource type="AudioStream" uid="uid://c8acxba7vi4yp" path="res://Sfx/spongebob-boowomp.mp3" id="3_fahql"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p0e35"]
@@ -115,8 +115,8 @@ area = NodePath("Area2D")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1650425241]
 visible = false
 position = Vector2(24, -72)
-scale = Vector2(3, 9)
-texture = ExtResource("2_p0e35")
+scale = Vector2(3, 3)
+texture = ExtResource("2_fahql")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1952462207]
 position = Vector2(24, -72)

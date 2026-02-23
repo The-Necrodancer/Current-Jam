@@ -29,9 +29,9 @@ func _physics_process(delta: float) -> void:
 		target.velocity += dir * wind_strength * delta
 		
 		# Cap wind contribution
-		var along := target.velocity.dot(dir)
-		if along > max_speed_added:
-			target.velocity -= dir * (along - max_speed_added)
+		var along = target.velocity.length() * (dir)
+		if along.length() > max_speed_added:
+			target.velocity -= dir * (along.length() - max_speed_added)
 		
 
 func _on_body_entered(body: Node2D) -> void:

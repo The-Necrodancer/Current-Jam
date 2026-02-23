@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://cxse4gl3gprcj"]
 
-[ext_resource type="Script" uid="uid://6t8efmx5m2rt" path="res://Scripts/level.gd" id="1_055b2"]
+[ext_resource type="Script" path="res://Scripts/level.gd" id="1_055b2"]
 [ext_resource type="PackedScene" uid="uid://c4512pji0h4i4" path="res://Tilemap Stuff/WireTilemap.tscn" id="2_2mgoq"]
 [ext_resource type="PackedScene" uid="uid://b4hq18ry2n160" path="res://Tilemap Stuff/BasicTilemap.tscn" id="3_uhnj4"]
 [ext_resource type="PackedScene" uid="uid://nshtepqpar2j" path="res://Tilemap Stuff/SpikeTilemap.tscn" id="4_42uki"]
@@ -20,7 +20,6 @@ script = ExtResource("1_055b2")
 player = NodePath("Player")
 end_door = NodePath("Door")
 end_gem = NodePath("Gem")
-metadata/_custom_type_script = "uid://6t8efmx5m2rt"
 
 [node name="WireTilemap" parent="." unique_id=1923152713 instance=ExtResource("2_2mgoq")]
 tile_map_data = PackedByteArray("AAAEAAEAAAAAAAAAAAAFAAEAAAACAAEAAAAGAAEAAAACAAEAAAAEAAIAAAACAAAAAAAEAAMAAAACAAAAAAAEAAQAAAACAAAAAAAEAAUAAAACAAAAAAAEAAYAAAACAAAAAAAHAAEAAAACAAEAAAAIAAEAAAACAAEAAAAJAAEAAAADAAEAAAAEAAcAAAACAAAAAAAEAAgAAAACAAAAAAAEAAkAAAACAAAAAAAEAAoAAAACAAAAAAAEAAsAAAACAAAAAAAEAAwAAAAAAAIAAAAKAAEAAAABAAIAAAA=")
