@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cxb0nu6252c2u" path="res://Scenes/wind.tscn" id="8_blpqv"]
 [ext_resource type="PackedScene" uid="uid://woh4wy1xm1d3" path="res://Scenes/Fan/fan_block.tscn" id="9_1jlnc"]
 [ext_resource type="PackedScene" uid="uid://bhc828t5ibioa" path="res://Scenes/WireController.tscn" id="9_blpqv"]
+[ext_resource type="PackedScene" uid="uid://cjkwboeocvoip" path="res://Scenes/Fan/particle_wind.tscn" id="11_u40f0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u40f0"]
 size = Vector2(384, 528)
@@ -66,3 +67,19 @@ position = Vector2(672, 528)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wind" unique_id=795953629]
 position = Vector2(48, -168)
 shape = SubResource("RectangleShape2D_u40f0")
+
+[node name="Particle_wind" parent="." unique_id=320778406 instance=ExtResource("11_u40f0")]
+position = Vector2(576, 656)
+lifetime = 3.0
+
+[node name="Particle_wind2" parent="." unique_id=745800863 instance=ExtResource("11_u40f0")]
+position = Vector2(672, 656)
+lifetime = 3.0
+
+[node name="Particle_wind3" parent="." unique_id=534742166 instance=ExtResource("11_u40f0")]
+position = Vector2(768, 656)
+lifetime = 3.0
+
+[node name="Particle_wind4" parent="." unique_id=311056047 instance=ExtResource("11_u40f0")]
+position = Vector2(864, 656)
+lifetime = 3.0
