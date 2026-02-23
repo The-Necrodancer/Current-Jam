@@ -7,8 +7,9 @@ class_name CameraFollow
 
 func _ready() -> void:
 	if x_bounds.x - x_bounds.y < 1:
-		x_bounds = self.global_position.x * Vector2.ONE
+		x_bounds = self.global_position.x * Vector2.RIGHT
 
 func _process(delta: float) -> void:
 	if target != null:
 		self.global_position.x = target.global_position.x
+	self.global_position.x = clampf(self.global_position.x, x_bounds.x,x_bounds.y)
