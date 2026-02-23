@@ -75,7 +75,7 @@ func _physics_process(delta: float) -> void:
 	if( abs(velocity.x) > move_speed_ceil):
 		velocity.x += -velocity.normalized().x * (abs(velocity.x) - move_speed_ceil)
 	
-	if(grounded and !up_draft):
+	if(grounded):
 		velocity *= ground_decel
 	else:
 		if(up_draft and is_hovering):
